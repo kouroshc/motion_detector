@@ -1,6 +1,6 @@
 $(document).ready(function () {
 //    Menu
-        $("a#pageLink").click(function () {
+    $("a#pageLink").click(function () {
         $("a#pageLink").removeClass("active");
         $(this).addClass("active");
     });
@@ -23,26 +23,114 @@ $(document).ready(function () {
         $(".left-area").removeClass("show");
     });
 //     TimeFrame
-    console.log($("#timeFrame").val())
+    var timeFrame = $("#timeFrame").val()
     $("#timeFrame").change(function () {
         $("#timeFrameValue").html(`${$("#timeFrame").val()}`)
-        var timeFrame = $("#timeFrame").val()
     })
+
     //VIdeo
-    const video = document.getElementById('video');
-    navigator.mediaDevices.enumerateDevices()
-        .then(devices => {
-            const videoDevices = devices.filter(device => device.kind === 'videoinput');
-            const videoDeviceIds = videoDevices.map(device => device.deviceId);
-            const videoConstraints = {video: {deviceId: videoDeviceIds[0]}};
-            return navigator.mediaDevices.getUserMedia(videoConstraints);
+    // const video = document.getElementById('video');
+    // navigator.mediaDevices.enumerateDevices()
+    //     .then(devices => {
+    //         const videoDevices = devices.filter(device => device.kind === 'videoinput');
+    //         const videoDeviceIds = videoDevices.map(device => device.deviceId);
+    //         const videoConstraints = {video: {deviceId: videoDeviceIds[0]}};
+    //         return navigator.mediaDevices.getUserMedia(videoConstraints);
+    //     })
+    //     .then(stream => {
+    //         video.srcObject = stream;
+    //     })
+    //     .catch(error => {
+    //         console.error(error);
+    //     });
+
+    function getUserMedia(options, successCallback, failureCallback) {
+        var api = navigator.getUserMedia || navigator.webkitGetUserMedia ||
+            navigator.mozGetUserMedia || navigator.msGetUserMedia;
+        if (api) {
+            return api.bind(navigator)(options, successCallback, failureCallback);
+        }
+        alert('User Media API not supported.');
+    }
+
+    var theStream;
+    var theRecorder;
+    var recordedChunks = [];
+
+    function saveRecording() {
+        console.log('Saving data');
+        theRecorder.stop();
+        stopRecording(theStream);
+
+        var blob = new Blob(recordedChunks, {type: "video/webm"});
+        var url = (window.URL || window.webkitURL).createObjectURL(blob);
+        var a = document.createElement("a");
+        document.body.appendChild(a);
+        a.style = "display: none";
+        a.href = url;
+        a.download = 'test.webm';
+        a.click();
+
+        // setTimeout() here is needed for Firefox.
+        setTimeout(function () {
+            (window.URL || window.webkitURL).revokeObjectURL(url);
+        }, 100);
+    }
+
+    function stopRecording(theMediaStream) {
+        theMediaStream.getTracks().forEach((track) => {
+            track.stop();
         })
-        .then(stream => {
-            video.srcObject = stream;
-        })
-        .catch(error => {
-            console.error(error);
-        });
+        //theRecorderStream.cancel();
+    }
+
+    $("#record-button").click(function () {
+        var constraints = {video: true, audio: true};
+
+        if (theStream) {
+            if (theRecorder.state == 'recording' && theRecorder.state) {
+                stopRecording(theStream);
+                console.log("Second record", theRecorder)
+            }
+        } else {
+            getUserMedia(constraints, function (stream) {
+                var mediaControl = document.querySelector('video');
+                console.log(mediaControl)
+
+
+                if (navigator.mozGetUserMedia) {
+                    mediaControl.mozSrcObject = stream;
+                } else {
+                    mediaControl.srcObject = stream;
+                }
+
+                theStream = stream;
+                try {
+                    recorder = new MediaRecorder(stream);
+                } catch (e) {
+                    console.error('Exception while creating MediaRecorder: ' + e);
+                    return;
+                }
+                theRecorder = recorder;
+                console.log('MediaRecorder created');
+                recorder.ondataavailable = recorderOnDataAvailable;
+                recorder.start(100);
+            }, function (err) {
+                alert('Error: ' + err);
+            });
+        }
+    });
+
+    function recorderOnDataAvailable(event) {
+        if (event.data.size == 0) return;
+        console.log('ondataavailable, type: ' + event.data.type);
+        recordedChunks.push(event.data);
+        console.log(recordedChunks);
+    }
+
+    $("#stop-button").click(function () {
+        saveRecording();
+    });
 
 
     //Result
@@ -138,5 +226,5 @@ $(document).ready(function () {
     }, 1000);
 
 
-
-});
+})
+;
