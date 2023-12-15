@@ -75,6 +75,9 @@ body {
 }
 
 @media screen and (min-width: 1200px) {
+  .mobile-message{
+    display: none;
+  }
   .app-container {
 
     background: $lightNeutral;
@@ -535,496 +538,509 @@ body {
 }
 
 @media screen and (max-width: 1200px) {
-  .app-container {
-    overflow: scroll;
+body *:not(.mobile-message) {
+        display: none;
+    }
 
-    background: $lightNeutral;
-    height: 100vh;
-    border-radius: 1rem;
-    box-shadow: red $boxShadow;
-    display: flex;
-    flex-flow: row wrap;
-
-    .left-area {
-      position: absolute;
-      border-radius: 0 1rem 1rem 0;
-      flex: 0 1 120rem;
-      height: 100%;
-      background: $mainColor;
-      flex-flow: column wrap;
-      align-items: start;
-      justify-content: start;
-      padding: 1rem;
-      transform: translateX(500px);
-      transition: all .5s ease;
-      display: flex;
-      opacity: 0;
-
-      &.show {
-        z-index: 3;
-        transform: translateX(0);
-        width: 70%;
-        opacity: 1;
-      }
-
-      a {
-        text-decoration: none;
-        color: $lightNeutral;
-      }
-
-      .btn-close-left {
-        position: absolute;
-        top: 2rem;
-        left: 1rem;
-        border: none;
-        background: none;
-        color: $lightNeutral;
-
-        &:hover {
-          cursor: pointer;
-        }
-
-      }
-
-      div {
-        flex: 1 1 100%;
-        width: 100%;
-        display: flex;
-        flex-flow: column wrap;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .app-name {
-        justify-content: center;
-        flex: 0 1 10%;
-        font-weight: 700;
-        font-size: 2rem;
-      }
-
-      .app-menu {
-        padding: 2rem 0;
-        align-items: start;
-        justify-content: start;
-        flex: 1 1 50%;
-
-        a {
-          text-align: start;
-          padding-top: 1rem;
-        }
-
-        span {
-          padding: 1rem;
-        }
-      }
-
-      .app-signout {
-        button {
-          border: none;
-          text-decoration: none;
-          background: $mainColor;
-        }
-
-        flex: 0 1 10%;
+    /* این قسمت پیام مورد نظر را نمایش می‌دهد */
+    .mobile-message {
+        display: block;
         text-align: center;
-        align-items: center;
-        justify-content: center;
-      }
+        font-size: 2rem;
+      color: $lightNeutral;
     }
-  }
-  .main-area {
-    padding: 2rem;
-    flex: 1 1 100%;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-flow: row wrap;
-
-    .Header {
-      flex: 1 1 100%;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-flow: row wrap;
-
-      .welcome {
-        margin-bottom: 1rem;
-        height: 1.9rem;
-        display: flex;
-        flex: 0 1 80%;
-        border-bottom: 3px solid $mainColor;
-
-        p {
-          span {
-            font-weight: 500;
-          }
-        }
-      }
-
-      .hamMenu {
-        flex: 0 1 20%;
-
-        text-align: end;
-
-        button {
-          text-align: end;
-          border: none;
-          text-decoration: none;
-          color: $mainColor;
-          background: none;
-          font-size: 1.3rem;
-          font-weight: 700;
-
-          &:hover {
-            cursor: pointer;
-          }
-        }
-      }
-    }
-
-
-    //Landing
-    .quickAccess {
-      flex: 100%;
-      display: flex;
-      flex-flow: row wrap;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-
-      .quickAccessSingle {
-        border-radius: 1rem;
-        flex: 0 1 40%;
-        height: 40%;
-        margin: 1rem;
-        padding: 0;
-        background: $mainColor;
-
-        a {
-          height: 100%;
-          display: flex;
-          flex-flow: row wrap;
-          justify-content: start;
-          align-items: center;
-          color: $lightNeutral;
-          text-decoration: none;
-
-          img {
-            mix-blend-mode: luminosity;
-            border-radius: 1rem 1rem  0 0   ;
-            height: 25rem;
-            object-fit: contain;
-            min-width: 100%;
-            object-fit: cover;
-            //margin-top: -30%;
-          }
-
-          p {
-
-            //margin-top: -10%;
-            z-index: 3;
-            &:hover {
-              font-weight: 700;
-              transition: font-weight .2s ease;
-            }
-
-            padding: 1rem;
-            width: 100%;
-            font-size: 1.3rem;
-            font-weight: 500;
-            text-align: end;
-
-          }
-        }
-
-      }
-    }
-
-    //Monitoring Page
-    .monitoring {
-      margin: 1rem 0;
-      flex: 1 0 100%;
-      display: flex;
-      flex-flow: column nowrap;
-      //height: 50vh;
-      align-items: center;
-      justify-content: space-around;
-
-      .monitoringInput {
-        flex: 0 1 100%;
-        display: flex;
-        flex-flow: row-reverse wrap;
-        justify-content: space-around;
-        background-color: $mainColor;
-        border-radius: 1rem;
-        padding: 1rem 1rem 1rem 0;
-
-        .monitoringRaw {
-          flex: 1 1 45%;
-          padding: 0 1rem;
-
-          video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: .6rem;
-
-          }
-        }
-
-        .monitoringResult {
-          background-color: $lightNeutral;
-          padding: 0 1rem;
-          flex: 1 1 45%;
-          border-radius: .6rem;
-        }
-      }
-
-      .monitoringControl {
-        flex: 100%;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-around;
-        align-items: center;
-        label{
-          font-size: 1.3rem;
-        }
-
-        .timeFrame {
-          direction: ltr;
-          -webkit-appearance: none;
-          appearance: none;
-          width: 100%;
-          background-color: $mainColor;
-          border-radius: 1rem;
-          height: .5rem;
-          outline: none;
-          opacity: 0.7;
-          transition: opacity 2s;
-
-          &::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: .43rem;
-            height: 1.3rem;
-            border-radius: .5rem;
-            background: $darkAccent;
-            cursor: pointer;
-          }
-
-          &::-moz-range-thumb {
-            width: .43rem;
-            height: 1.3rem;
-            border-radius: .5rem;
-            background: $darkAccent;
-            cursor: pointer;
-          }
-        }
-
-        #record-button {
-          background-color: $mainColor;
-          border-radius: 50%;
-          border: none;
-          color: $lightNeutral;
-          cursor: pointer;
-          height: 100px;
-          margin: 1rem auto;
-          position: relative;
-          box-shadow: $mainColor $boxShadow;
-          width: 100px;
-          transition: color 1s ease;
-
-          &:hover {
-            cursor: pointer;
-            color: $mainColor;
-            background-color: $lightNeutral;
-            box-shadow: $mainColor $boxShadow;
-            transition: all .3s ease;
-          }
-
-          i {
-            font-size: 50px;
-            left: 50%;
-            position: absolute;
-            top: 50%;
-            transform: translate(-50%, -50%);
-          }
-        }
-
-        #record-button.recording {
-          background-color: $mainColor;
-          color: $secondaryColor;
-          box-shadow: $secondaryColor $boxShadow;
-          transition: color, box-shadow 1s ease;
-
-          i {
-            animation: pulse 1s infinite;
-            border-radius: 50%;
-
-          }
-        }
-
-        @keyframes pulse {
-          0% {
-            box-shadow: 0 0 0 0 rgba($secondaryColor, 0.4);
-          }
-          70% {
-            box-shadow: 0 0 0 2rem rgba($secondaryColor, 0);
-
-          }
-          100% {
-            box-shadow: 0 0 0 0 rgba($secondaryColor, 0);
-          }
-        }
-
-        .monitoringControlBtnStop {
-          border: none;
-          font-size: 1.3rem;
-          padding: 1rem 2rem;
-          background-color: $mainColor;
-          color: $lightNeutral;
-          border-radius: 1rem;
-
-          &:hover {
-            cursor: pointer;
-            color: $mainColor;
-            background-color: $lightNeutral;
-            box-shadow: $mainColor $boxShadow;
-            transition: all .3s ease;
-          }
-
-          i {
-            padding-left: 1rem;
-          }
-
-        }
-
-
-      }
-
-
-    }
-
-    .statistics {
-      flex: 100%;
-      height: 50vh;
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-around;
-      align-items: center;
-
-      .statisticsTables {
-        overflow-x: hidden;
-        overflow-y: scroll;
-        height: 100%;
-        border-radius: 1rem;
-        padding: 1rem;
-        flex: 0 1 100%;
-        margin: 1rem 0;
-        background-color: $mainColor;
-
-
-        table {
-          width: 100%;
-          border-collapse: collapse;
-          color: $lightNeutral;
-          text-align: center;
-
-          tr {
-            font-size: 1.5rem;
-
-            &.normal {
-
-              color: $lightNeutral;
-            }
-
-            &.danger {
-              color: #9C1A1C;
-            }
-
-            &.perfect {
-              color: green;
-            }
-          }
-
-          td {
-            label {
-              font-size: 1.2rem;
-            }
-
-            padding: .2rem;
-
-            .slider {
-              direction: ltr;
-              //-webkit-appearance: none;
-              appearance: none;
-              width: 100%;
-              background-color: $mainColor;
-              box-shadow: black $boxShadow;
-              border-radius: 1rem;
-              height: .3rem;
-              outline: none;
-              opacity: 0.7;
-              transition: opacity 2s;
-            }
-          }
-        }
-
-      }
-
-      .statisticsScoreOrCharts {
-        flex: 0 1 100%;
-        background-color: $mainColor;
-        height: 100%;
-        border-radius: 1rem;
-        color: $lightNeutral;
-
-
-        .statisticTabs {
-          display: flex;
-          flex-flow: row wrap;
-          justify-content: space-around;
-          align-items: start;
-          width: 100%;
-
-          .statisticTab {
-            font-size: 1.4rem;
-            padding: 1rem;
-            cursor: pointer;
-
-            opacity: .5;
-
-            &.active {
-              opacity: 1;
-              font-weight: bold;
-            }
-
-          }
-
-
-        }
-
-        .score {
-          display: flex;
-          height: 70%;
-          flex-flow: row wrap;
-          justify-content: space-around;
-          align-items: center;
-
-          .scoreNo {
-            flex: 100%;
-            font-size: 1.4rem;
-            font-weight: bold;
-            text-align: center;
-          }
-
-        }
-      }
-    }
-
-  }
 }
+//@media screen and (max-width: 1200px) {
+//  .app-container {
+//    overflow: scroll;
+//
+//    background: $lightNeutral;
+//    height: 100vh;
+//    border-radius: 1rem;
+//    box-shadow: red $boxShadow;
+//    display: flex;
+//    flex-flow: row wrap;
+//
+//    .left-area {
+//      position: absolute;
+//      border-radius: 0 1rem 1rem 0;
+//      flex: 0 1 120rem;
+//      height: 100%;
+//      background: $mainColor;
+//      flex-flow: column wrap;
+//      align-items: start;
+//      justify-content: start;
+//      padding: 1rem;
+//      transform: translateX(500px);
+//      transition: all .5s ease;
+//      display: flex;
+//      opacity: 0;
+//
+//      &.show {
+//        z-index: 3;
+//        transform: translateX(0);
+//        width: 70%;
+//        opacity: 1;
+//      }
+//
+//      a {
+//        text-decoration: none;
+//        color: $lightNeutral;
+//      }
+//
+//      .btn-close-left {
+//        position: absolute;
+//        top: 2rem;
+//        left: 1rem;
+//        border: none;
+//        background: none;
+//        color: $lightNeutral;
+//
+//        &:hover {
+//          cursor: pointer;
+//        }
+//
+//      }
+//
+//      div {
+//        flex: 1 1 100%;
+//        width: 100%;
+//        display: flex;
+//        flex-flow: column wrap;
+//        align-items: center;
+//        justify-content: center;
+//      }
+//
+//      .app-name {
+//        justify-content: center;
+//        flex: 0 1 10%;
+//        font-weight: 700;
+//        font-size: 2rem;
+//      }
+//
+//      .app-menu {
+//        padding: 2rem 0;
+//        align-items: start;
+//        justify-content: start;
+//        flex: 1 1 50%;
+//
+//        a {
+//          text-align: start;
+//          padding-top: 1rem;
+//        }
+//
+//        span {
+//          padding: 1rem;
+//        }
+//      }
+//
+//      .app-signout {
+//        button {
+//          border: none;
+//          text-decoration: none;
+//          background: $mainColor;
+//        }
+//
+//        flex: 0 1 10%;
+//        text-align: center;
+//        align-items: center;
+//        justify-content: center;
+//      }
+//    }
+//  }
+//  .main-area {
+//    padding: 2rem;
+//    flex: 1 1 100%;
+//    width: 100%;
+//    height: 100%;
+//    display: flex;
+//    flex-flow: row wrap;
+//
+//    .Header {
+//      flex: 1 1 100%;
+//
+//      display: flex;
+//      align-items: center;
+//      justify-content: space-between;
+//      flex-flow: row wrap;
+//
+//      .welcome {
+//        margin-bottom: 1rem;
+//        height: 1.9rem;
+//        display: flex;
+//        flex: 0 1 80%;
+//        border-bottom: 3px solid $mainColor;
+//
+//        p {
+//          span {
+//            font-weight: 500;
+//          }
+//        }
+//      }
+//
+//      .hamMenu {
+//        flex: 0 1 20%;
+//
+//        text-align: end;
+//
+//        button {
+//          text-align: end;
+//          border: none;
+//          text-decoration: none;
+//          color: $mainColor;
+//          background: none;
+//          font-size: 1.3rem;
+//          font-weight: 700;
+//
+//          &:hover {
+//            cursor: pointer;
+//          }
+//        }
+//      }
+//    }
+//
+//
+//    //Landing
+//    .quickAccess {
+//      flex: 100%;
+//      display: flex;
+//      flex-flow: row wrap;
+//      align-items: center;
+//      justify-content: center;
+//      text-align: center;
+//
+//      .quickAccessSingle {
+//        border-radius: 1rem;
+//        flex: 0 1 40%;
+//        height: 40%;
+//        margin: 1rem;
+//        padding: 0;
+//        background: $mainColor;
+//
+//        a {
+//          height: 100%;
+//          display: flex;
+//          flex-flow: row wrap;
+//          justify-content: start;
+//          align-items: center;
+//          color: $lightNeutral;
+//          text-decoration: none;
+//
+//          img {
+//            mix-blend-mode: luminosity;
+//            border-radius: 1rem 1rem  0 0   ;
+//            height: 25rem;
+//            object-fit: contain;
+//            min-width: 100%;
+//            object-fit: cover;
+//            //margin-top: -30%;
+//          }
+//
+//          p {
+//
+//            //margin-top: -10%;
+//            z-index: 3;
+//            &:hover {
+//              font-weight: 700;
+//              transition: font-weight .2s ease;
+//            }
+//
+//            padding: 1rem;
+//            width: 100%;
+//            font-size: 1.3rem;
+//            font-weight: 500;
+//            text-align: end;
+//
+//          }
+//        }
+//
+//      }
+//    }
+//
+//    //Monitoring Page
+//    .monitoring {
+//      margin: 1rem 0;
+//      flex: 1 0 100%;
+//      display: flex;
+//      flex-flow: column nowrap;
+//      //height: 50vh;
+//      align-items: center;
+//      justify-content: space-around;
+//
+//      .monitoringInput {
+//        flex: 0 1 100%;
+//        display: flex;
+//        flex-flow: row-reverse wrap;
+//        justify-content: space-around;
+//        background-color: $mainColor;
+//        border-radius: 1rem;
+//        padding: 1rem 1rem 1rem 0;
+//
+//        .monitoringRaw {
+//          flex: 1 1 45%;
+//          padding: 0 1rem;
+//
+//          video {
+//            width: 100%;
+//            height: 100%;
+//            object-fit: cover;
+//            border-radius: .6rem;
+//
+//          }
+//        }
+//
+//        .monitoringResult {
+//          background-color: $lightNeutral;
+//          padding: 0 1rem;
+//          flex: 1 1 45%;
+//          border-radius: .6rem;
+//        }
+//      }
+//
+//      .monitoringControl {
+//        flex: 100%;
+//        display: flex;
+//        flex-flow: row wrap;
+//        justify-content: space-around;
+//        align-items: center;
+//        label{
+//          font-size: 1.3rem;
+//        }
+//
+//        .timeFrame {
+//          direction: ltr;
+//          -webkit-appearance: none;
+//          appearance: none;
+//          width: 100%;
+//          background-color: $mainColor;
+//          border-radius: 1rem;
+//          height: .5rem;
+//          outline: none;
+//          opacity: 0.7;
+//          transition: opacity 2s;
+//
+//          &::-webkit-slider-thumb {
+//            -webkit-appearance: none;
+//            appearance: none;
+//            width: .43rem;
+//            height: 1.3rem;
+//            border-radius: .5rem;
+//            background: $darkAccent;
+//            cursor: pointer;
+//          }
+//
+//          &::-moz-range-thumb {
+//            width: .43rem;
+//            height: 1.3rem;
+//            border-radius: .5rem;
+//            background: $darkAccent;
+//            cursor: pointer;
+//          }
+//        }
+//
+//        #record-button {
+//          background-color: $mainColor;
+//          border-radius: 50%;
+//          border: none;
+//          color: $lightNeutral;
+//          cursor: pointer;
+//          height: 100px;
+//          margin: 1rem auto;
+//          position: relative;
+//          box-shadow: $mainColor $boxShadow;
+//          width: 100px;
+//          transition: color 1s ease;
+//
+//          &:hover {
+//            cursor: pointer;
+//            color: $mainColor;
+//            background-color: $lightNeutral;
+//            box-shadow: $mainColor $boxShadow;
+//            transition: all .3s ease;
+//          }
+//
+//          i {
+//            font-size: 50px;
+//            left: 50%;
+//            position: absolute;
+//            top: 50%;
+//            transform: translate(-50%, -50%);
+//          }
+//        }
+//
+//        #record-button.recording {
+//          background-color: $mainColor;
+//          color: $secondaryColor;
+//          box-shadow: $secondaryColor $boxShadow;
+//          transition: color, box-shadow 1s ease;
+//
+//          i {
+//            animation: pulse 1s infinite;
+//            border-radius: 50%;
+//
+//          }
+//        }
+//
+//        @keyframes pulse {
+//          0% {
+//            box-shadow: 0 0 0 0 rgba($secondaryColor, 0.4);
+//          }
+//          70% {
+//            box-shadow: 0 0 0 2rem rgba($secondaryColor, 0);
+//
+//          }
+//          100% {
+//            box-shadow: 0 0 0 0 rgba($secondaryColor, 0);
+//          }
+//        }
+//
+//        .monitoringControlBtnStop {
+//          border: none;
+//          font-size: 1.3rem;
+//          padding: 1rem 2rem;
+//          background-color: $mainColor;
+//          color: $lightNeutral;
+//          border-radius: 1rem;
+//
+//          &:hover {
+//            cursor: pointer;
+//            color: $mainColor;
+//            background-color: $lightNeutral;
+//            box-shadow: $mainColor $boxShadow;
+//            transition: all .3s ease;
+//          }
+//
+//          i {
+//            padding-left: 1rem;
+//          }
+//
+//        }
+//
+//
+//      }
+//
+//
+//    }
+//
+//    .statistics {
+//      flex: 100%;
+//      height: 50vh;
+//      display: flex;
+//      flex-flow: row wrap;
+//      justify-content: space-around;
+//      align-items: center;
+//
+//      .statisticsTables {
+//        overflow-x: hidden;
+//        overflow-y: scroll;
+//        height: 100%;
+//        border-radius: 1rem;
+//        padding: 1rem;
+//        flex: 0 1 100%;
+//        margin: 1rem 0;
+//        background-color: $mainColor;
+//
+//
+//        table {
+//          width: 100%;
+//          border-collapse: collapse;
+//          color: $lightNeutral;
+//          text-align: center;
+//
+//          tr {
+//            font-size: 1.5rem;
+//
+//            &.normal {
+//
+//              color: $lightNeutral;
+//            }
+//
+//            &.danger {
+//              color: #9C1A1C;
+//            }
+//
+//            &.perfect {
+//              color: green;
+//            }
+//          }
+//
+//          td {
+//            label {
+//              font-size: 1.2rem;
+//            }
+//
+//            padding: .2rem;
+//
+//            .slider {
+//              direction: ltr;
+//              //-webkit-appearance: none;
+//              appearance: none;
+//              width: 100%;
+//              background-color: $mainColor;
+//              box-shadow: black $boxShadow;
+//              border-radius: 1rem;
+//              height: .3rem;
+//              outline: none;
+//              opacity: 0.7;
+//              transition: opacity 2s;
+//            }
+//          }
+//        }
+//
+//      }
+//
+//      .statisticsScoreOrCharts {
+//        flex: 0 1 100%;
+//        background-color: $mainColor;
+//        height: 100%;
+//        border-radius: 1rem;
+//        color: $lightNeutral;
+//
+//
+//        .statisticTabs {
+//          display: flex;
+//          flex-flow: row wrap;
+//          justify-content: space-around;
+//          align-items: start;
+//          width: 100%;
+//
+//          .statisticTab {
+//            font-size: 1.4rem;
+//            padding: 1rem;
+//            cursor: pointer;
+//
+//            opacity: .5;
+//
+//            &.active {
+//              opacity: 1;
+//              font-weight: bold;
+//            }
+//
+//          }
+//
+//
+//        }
+//
+//        .score {
+//          display: flex;
+//          height: 70%;
+//          flex-flow: row wrap;
+//          justify-content: space-around;
+//          align-items: center;
+//
+//          .scoreNo {
+//            flex: 100%;
+//            font-size: 1.4rem;
+//            font-weight: bold;
+//            text-align: center;
+//          }
+//
+//        }
+//      }
+//    }
+//
+//  }
+//}
 
 
 
