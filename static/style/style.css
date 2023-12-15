@@ -463,5 +463,404 @@ body {
     text-align: center;
   }
 }
+@media screen and (max-width: 1200px) {
+  .app-container {
+    overflow: scroll;
+    background: #f7fff7;
+    height: 100vh;
+    border-radius: 1rem;
+    box-shadow: red 3px 2px 5px 0.05px;
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .app-container .left-area {
+    position: absolute;
+    border-radius: 0 1rem 1rem 0;
+    flex: 0 1 120rem;
+    height: 100%;
+    background: #343434;
+    flex-flow: column wrap;
+    align-items: start;
+    justify-content: start;
+    padding: 1rem;
+    transform: translateX(500px);
+    transition: all 0.5s ease;
+    display: flex;
+    opacity: 0;
+  }
+  .app-container .left-area.show {
+    z-index: 3;
+    transform: translateX(0);
+    width: 70%;
+    opacity: 1;
+  }
+  .app-container .left-area a {
+    text-decoration: none;
+    color: #f7fff7;
+  }
+  .app-container .left-area .btn-close-left {
+    position: absolute;
+    top: 2rem;
+    left: 1rem;
+    border: none;
+    background: none;
+    color: #f7fff7;
+  }
+  .app-container .left-area .btn-close-left:hover {
+    cursor: pointer;
+  }
+  .app-container .left-area div {
+    flex: 1 1 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .app-container .left-area .app-name {
+    justify-content: center;
+    flex: 0 1 10%;
+    font-weight: 700;
+    font-size: 2rem;
+  }
+  .app-container .left-area .app-menu {
+    padding: 2rem 0;
+    align-items: start;
+    justify-content: start;
+    flex: 1 1 50%;
+  }
+  .app-container .left-area .app-menu a {
+    text-align: start;
+    padding-top: 1rem;
+  }
+  .app-container .left-area .app-menu span {
+    padding: 1rem;
+  }
+  .app-container .left-area .app-signout {
+    flex: 0 1 10%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .app-container .left-area .app-signout button {
+    border: none;
+    text-decoration: none;
+    background: #343434;
+  }
+  .main-area {
+    padding: 2rem;
+    flex: 1 1 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .main-area .Header {
+    flex: 1 1 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row wrap;
+  }
+  .main-area .Header .welcome {
+    margin-bottom: 1rem;
+    height: 1.9rem;
+    display: flex;
+    flex: 0 1 80%;
+    border-bottom: 3px solid #343434;
+  }
+  .main-area .Header .welcome p span {
+    font-weight: 500;
+  }
+  .main-area .Header .hamMenu {
+    flex: 0 1 20%;
+    text-align: end;
+  }
+  .main-area .Header .hamMenu button {
+    text-align: end;
+    border: none;
+    text-decoration: none;
+    color: #343434;
+    background: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+  .main-area .Header .hamMenu button:hover {
+    cursor: pointer;
+  }
+  .main-area .quickAccess {
+    flex: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .main-area .quickAccess .quickAccessSingle {
+    border-radius: 1rem;
+    flex: 0 1 40%;
+    height: 40%;
+    margin: 1rem;
+    padding: 0;
+    background: #343434;
+  }
+  .main-area .quickAccess .quickAccessSingle a {
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: start;
+    align-items: center;
+    color: #f7fff7;
+    text-decoration: none;
+  }
+  .main-area .quickAccess .quickAccessSingle a img {
+    mix-blend-mode: luminosity;
+    border-radius: 1rem 1rem 0 0;
+    height: 25rem;
+    object-fit: contain;
+    min-width: 100%;
+    object-fit: cover;
+  }
+  .main-area .quickAccess .quickAccessSingle a p {
+    z-index: 3;
+    padding: 1rem;
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-align: end;
+  }
+  .main-area .quickAccess .quickAccessSingle a p:hover {
+    font-weight: 700;
+    transition: font-weight 0.2s ease;
+  }
+  .main-area .monitoring {
+    margin: 1rem 0;
+    flex: 1 0 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .main-area .monitoring .monitoringInput {
+    flex: 0 1 100%;
+    display: flex;
+    flex-flow: row-reverse wrap;
+    justify-content: space-around;
+    background-color: #343434;
+    border-radius: 1rem;
+    padding: 1rem 1rem 1rem 0;
+  }
+  .main-area .monitoring .monitoringInput .monitoringRaw {
+    flex: 1 1 45%;
+    padding: 0 1rem;
+  }
+  .main-area .monitoring .monitoringInput .monitoringRaw video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.6rem;
+  }
+  .main-area .monitoring .monitoringInput .monitoringResult {
+    background-color: #f7fff7;
+    padding: 0 1rem;
+    flex: 1 1 45%;
+    border-radius: 0.6rem;
+  }
+  .main-area .monitoring .monitoringControl {
+    flex: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .main-area .monitoring .monitoringControl label {
+    font-size: 1.3rem;
+  }
+  .main-area .monitoring .monitoringControl .timeFrame {
+    direction: ltr;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    background-color: #343434;
+    border-radius: 1rem;
+    height: 0.5rem;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 2s;
+  }
+  .main-area .monitoring .monitoringControl .timeFrame::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0.43rem;
+    height: 1.3rem;
+    border-radius: 0.5rem;
+    background: #2f3061;
+    cursor: pointer;
+  }
+  .main-area .monitoring .monitoringControl .timeFrame::-moz-range-thumb {
+    width: 0.43rem;
+    height: 1.3rem;
+    border-radius: 0.5rem;
+    background: #2f3061;
+    cursor: pointer;
+  }
+  .main-area .monitoring .monitoringControl #record-button {
+    background-color: #343434;
+    border-radius: 50%;
+    border: none;
+    color: #f7fff7;
+    cursor: pointer;
+    height: 100px;
+    margin: 1rem auto;
+    position: relative;
+    box-shadow: #343434 3px 2px 5px 0.05px;
+    width: 100px;
+    transition: color 1s ease;
+  }
+  .main-area .monitoring .monitoringControl #record-button:hover {
+    cursor: pointer;
+    color: #343434;
+    background-color: #f7fff7;
+    box-shadow: #343434 3px 2px 5px 0.05px;
+    transition: all 0.3s ease;
+  }
+  .main-area .monitoring .monitoringControl #record-button i {
+    font-size: 50px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .main-area .monitoring .monitoringControl #record-button.recording {
+    background-color: #343434;
+    color: #ffe66d;
+    box-shadow: #ffe66d 3px 2px 5px 0.05px;
+    transition: color, box-shadow 1s ease;
+  }
+  .main-area .monitoring .monitoringControl #record-button.recording i {
+    animation: pulse 1s infinite;
+    border-radius: 50%;
+  }
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255, 230, 109, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 2rem rgba(255, 230, 109, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 230, 109, 0);
+    }
+  }
+  .main-area .monitoring .monitoringControl .monitoringControlBtnStop {
+    border: none;
+    font-size: 1.3rem;
+    padding: 1rem 2rem;
+    background-color: #343434;
+    color: #f7fff7;
+    border-radius: 1rem;
+  }
+  .main-area .monitoring .monitoringControl .monitoringControlBtnStop:hover {
+    cursor: pointer;
+    color: #343434;
+    background-color: #f7fff7;
+    box-shadow: #343434 3px 2px 5px 0.05px;
+    transition: all 0.3s ease;
+  }
+  .main-area .monitoring .monitoringControl .monitoringControlBtnStop i {
+    padding-left: 1rem;
+  }
+  .main-area .statistics {
+    flex: 100%;
+    height: 50vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .main-area .statistics .statisticsTables {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100%;
+    border-radius: 1rem;
+    padding: 1rem;
+    flex: 0 1 100%;
+    margin: 1rem 0;
+    background-color: #343434;
+  }
+  .main-area .statistics .statisticsTables table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #f7fff7;
+    text-align: center;
+  }
+  .main-area .statistics .statisticsTables table tr {
+    font-size: 1.5rem;
+  }
+  .main-area .statistics .statisticsTables table tr.normal {
+    color: #f7fff7;
+  }
+  .main-area .statistics .statisticsTables table tr.danger {
+    color: #9C1A1C;
+  }
+  .main-area .statistics .statisticsTables table tr.perfect {
+    color: green;
+  }
+  .main-area .statistics .statisticsTables table td {
+    padding: 0.2rem;
+  }
+  .main-area .statistics .statisticsTables table td label {
+    font-size: 1.2rem;
+  }
+  .main-area .statistics .statisticsTables table td .slider {
+    direction: ltr;
+    appearance: none;
+    width: 100%;
+    background-color: #343434;
+    box-shadow: black 3px 2px 5px 0.05px;
+    border-radius: 1rem;
+    height: 0.3rem;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 2s;
+  }
+  .main-area .statistics .statisticsScoreOrCharts {
+    flex: 0 1 100%;
+    background-color: #343434;
+    height: 100%;
+    border-radius: 1rem;
+    color: #f7fff7;
+  }
+  .main-area .statistics .statisticsScoreOrCharts .statisticTabs {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: start;
+    width: 100%;
+  }
+  .main-area .statistics .statisticsScoreOrCharts .statisticTabs .statisticTab {
+    font-size: 1.4rem;
+    padding: 1rem;
+    cursor: pointer;
+    opacity: 0.5;
+  }
+  .main-area .statistics .statisticsScoreOrCharts .statisticTabs .statisticTab.active {
+    opacity: 1;
+    font-weight: bold;
+  }
+  .main-area .statistics .statisticsScoreOrCharts .score {
+    display: flex;
+    height: 70%;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .main-area .statistics .statisticsScoreOrCharts .score .scoreNo {
+    flex: 100%;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

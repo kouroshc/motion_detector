@@ -1,4 +1,27 @@
 $(document).ready(function () {
+//    Menu
+        $("a#pageLink").click(function () {
+        $("a#pageLink").removeClass("active");
+        $(this).addClass("active");
+    });
+
+    $(".btn-show-left-area").click(function () {
+        $(".left-area").toggleClass("show");
+        // $(".left-area").addClass("show");
+    });
+
+    $(".btn-show-right-area").click(function () {
+        $(".right-area").removeClass("show");
+        $(".right-area").addClass("show");
+    });
+
+    $(".btn-close-right").click(function () {
+        $(".right-area").removeClass("show");
+    });
+
+    $(".btn-close-left").click(function () {
+        $(".left-area").removeClass("show");
+    });
 //     TimeFrame
     console.log($("#timeFrame").val())
     $("#timeFrame").change(function () {
