@@ -1,0 +1,51 @@
+{% extends "pre.html" %}
+{% block title %} چم گارد | داشبورد مدیریتی  {% endblock  %}
+{% block content %}
+<div class="main-area">
+    <!--            <button class="btn-show-right-area">-->
+    <!--                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"-->
+    <!--                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"-->
+    <!--                    class="feather feather-chevron-left">-->
+    <!--                    <polyline points="15 18 9 12 15 6" />-->
+    <!--                </svg>-->
+    <!--            </button>-->
+    <!--            <button class="btn-show-left-area">-->
+
+    <!--                <span class="fa-solid fa-grip-lines"></span>-->
+    <!--            </button>-->
+    <!--            <div class="main-area-header">-->
+    <!--                <div class="search-wrapper" id="searchLine">-->
+    <!--                    <input class="search-input" type="text" placeholder="e.g. files.doc">-->
+    <!--                    <span class="fa-solid fa-search"></span>-->
+    <!--                </div>-->
+    <!--            </div>-->
+
+
+
+    <div class="Header">
+        <div class="welcome">
+            <p class="welcomeText"> عزیز خوش آمدید
+            </p>
+        </div>
+        <div class="hamMenu">
+            <button class="fa-solid fa-bars btn-show-left-area">
+            </button>
+        </div>
+    </div>
+
+
+    <div class="quickAccess">
+
+        <div class="quickAccessSingle">
+            <a href="{{ url_for('monitoring') }}">
+                <img src="{{url_for('static', filename='img/ff5453ff1ae4d6cad7adf3ff031a9b634eb61d71dfe4ab7b.avif')}}" alt="">
+                <p>مانیتورینگ</p>
+            </a>
+        </div>
+
+    </div>
+
+
+</div>
+
+{% endblock %}

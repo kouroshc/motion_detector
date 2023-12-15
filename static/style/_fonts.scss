@@ -1,0 +1,40 @@
+﻿
+@font-face {
+	font-family:"Artinsharp";
+	font-style: Thin;
+	font-weight: 100;
+	src: url('../fonts/artin/woff2/ArtinSharp-Thin.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('../fonts/artin/woff/ArtinSharp-Thin.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+	font-family:"Artinsharp";
+	font-style: Light;
+	font-weight: 300;
+	src: url('../fonts/artin/woff2/ArtinSharp-Light.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('../fonts/artin/woff/ArtinSharp-Light.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+	font-family:"Artinsharp";
+	font-style: Regular;
+	font-weight: 500;
+	src: url('../fonts/artin/woff2/ArtinSharp-Regular.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('../fonts/artin/woff/ArtinSharp-Regular.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+	font-family:"Artinsharp";
+	font-style: Bold;
+	font-weight: 800;
+	src: url('../fonts/artin/woff2/ArtinSharp-Bold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('../fonts/artin/woff/ArtinSharp-Bold.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+	font-family:"Artinsharp";
+	font-style: Black;
+	font-weight: 900;
+	src: url('../fonts/artin/woff2/ArtinSharp-Black.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('../fonts/artin/woff/ArtinSharp-Black.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+
+$mainFont: 'Artinsharp';

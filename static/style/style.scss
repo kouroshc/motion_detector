@@ -1,0 +1,545 @@
+@import "fonts";
+@import "colors";
+
+$boxShadow: 3px 2px 5px .05px;
+$animation: 3s ease 0s 1 normal forwards;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: $mainFont;
+  // transitison: 1080ms ease;
+}
+
+body {
+
+  font-family: $mainFont;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: $mainColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* width*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  margin: 1rem;
+  background-color: $lightNeutral;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $mainColor;
+  border-radius: 10px;
+}
+
+.notifi {
+  width: 50%;
+  z-index: 99;
+  font-family: $mainFont;
+  font-weight: 300;
+  position: absolute;
+  text-align: center;
+  left: auto;
+  top: 1rem;
+  background: $lightNeutral;
+  color: $mainColor;
+  display: block;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: grey $boxShadow;
+  transform: translateY(-150px);
+  opacity: 0;
+
+
+  &.showNotifi {
+    transform: translateY(20px);
+    opacity: 1;
+  }
+
+  &.hideNotifi {
+    transform: translateY(-150px);
+    opacity: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .app-container {
+
+    background: $lightNeutral;
+    width: 95vw;
+    height: 95vh;
+    border-radius: 1rem;
+    box-shadow: $secondaryColor $boxShadow;
+    display: flex;
+    flex-flow: row wrap;
+
+    .left-area {
+
+      border-radius: 0 1rem 1rem 0;
+      flex: 0 1 16rem;
+      width: 100%;
+      height: 100%;
+      background: $mainColor;
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+
+      a {
+        text-decoration: none;
+        color: $lightNeutral;
+      }
+
+      .btn-close-left {
+        display: none;
+
+      }
+
+      div {
+        //flex: 1 1;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+      }
+
+      .app-name {
+        justify-content: center;
+        font-weight: 700;
+        font-size: 2rem;
+        flex: 0 1 10%;
+      }
+
+      .app-menu {
+        padding: 2rem 0;
+        align-items: start;
+        justify-content: start;
+        flex: 1 1 50%;
+
+        a {
+          text-align: start;
+          padding-top: 1rem;
+
+          &:hover {
+            font-weight: 700;
+            transition: font-weight .2s ease;
+          }
+        }
+
+        span {
+          padding: 1rem;
+        }
+      }
+
+      .app-signout {
+        button {
+          border: none;
+          text-decoration: none;
+          background: $mainColor;
+
+        }
+
+        flex: 0 1 10%;
+        justify-content: end;
+      }
+    }
+  }
+  .main-area {
+    padding: 2rem;
+    flex: 1 1 50%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: start;
+    overflow: auto;
+
+    .Header {
+      flex: 0 1 100%;
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      flex-flow: row wrap;
+
+      .welcome {
+        height: 1.9rem;
+        display: flex;
+        flex: 0 1 50%;
+        border-bottom: 3px solid $mainColor;
+
+        span {
+          font-weight: 500;
+        }
+      }
+
+
+    }
+
+    .hamMenu {
+      button {
+        display: none;
+      }
+    }
+
+    //Landing
+    .quickAccess {
+      flex: 100%;
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      .quickAccessSingle {
+        border-radius: 1rem;
+        flex: 0 1 40%;
+        height: 40%;
+        margin: 1rem;
+        padding: 0;
+        background: $mainColor;
+
+        a {
+          height: 100%;
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: start;
+          align-items: center;
+          color: $lightNeutral;
+          text-decoration: none;
+
+          img {
+            mix-blend-mode: luminosity;
+            border-radius: 1rem 1rem  0 0   ;
+            height: 25rem;
+            object-fit: contain;
+            min-width: 100%;
+            object-fit: cover;
+            //margin-top: -30%;
+          }
+
+          p {
+
+            //margin-top: -10%;
+            z-index: 3;
+            &:hover {
+              font-weight: 700;
+              transition: font-weight .2s ease;
+            }
+
+            padding: 1rem;
+            width: 100%;
+            font-size: 1.3rem;
+            font-weight: 500;
+            text-align: end;
+
+          }
+        }
+
+      }
+    }
+
+    //Monitoring Page
+    .monitoring {
+      margin: 1rem 0;
+      flex: 1 0 100%;
+      display: flex;
+      flex-flow: row-reverse nowrap;
+      height: 50vh;
+      align-items: center;
+      justify-content: space-around;
+
+      .monitoringInput {
+        flex: 0 1 80%;
+        display: flex;
+        flex-flow: row-reverse wrap;
+        justify-content: space-around;
+        background-color: $mainColor;
+        border-radius: 1rem;
+        padding: 1rem 1rem 1rem 0;
+
+        .monitoringRaw {
+          flex: 1 1 45%;
+          padding: 0 1rem;
+
+          video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: .6rem;
+
+          }
+        }
+
+        .monitoringResult {
+          background-color: $lightNeutral;
+          padding: 0 1rem;
+          flex: 1 1 45%;
+          border-radius: .6rem;
+        }
+      }
+
+      .monitoringControl {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-around;
+        align-items: center;
+        label{
+          font-size: 1.3rem;
+        }
+
+        .timeFrame {
+          direction: ltr;
+          -webkit-appearance: none;
+          appearance: none;
+          width: 100%;
+          background-color: $mainColor;
+          border-radius: 1rem;
+          height: .5rem;
+          outline: none;
+          opacity: 0.7;
+          transition: opacity 2s;
+
+          &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: .43rem;
+            height: 1.3rem;
+            border-radius: .5rem;
+            background: $darkAccent;
+            cursor: pointer;
+          }
+
+          &::-moz-range-thumb {
+            width: .43rem;
+            height: 1.3rem;
+            border-radius: .5rem;
+            background: $darkAccent;
+            cursor: pointer;
+          }
+        }
+
+        #record-button {
+          background-color: $mainColor;
+          border-radius: 50%;
+          border: none;
+          color: $lightNeutral;
+          cursor: pointer;
+          height: 100px;
+          margin: 1rem auto;
+          position: relative;
+          box-shadow: $mainColor $boxShadow;
+          width: 100px;
+          transition: color 1s ease;
+
+          &:hover {
+            cursor: pointer;
+            color: $mainColor;
+            background-color: $lightNeutral;
+            box-shadow: $mainColor $boxShadow;
+            transition: all .3s ease;
+          }
+
+          i {
+            font-size: 50px;
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+
+        #record-button.recording {
+          background-color: $mainColor;
+          color: $secondaryColor;
+          box-shadow: $secondaryColor $boxShadow;
+          transition: color, box-shadow 1s ease;
+
+          i {
+            animation: pulse 1s infinite;
+            border-radius: 50%;
+
+          }
+        }
+
+        @keyframes pulse {
+          0% {
+            box-shadow: 0 0 0 0 rgba($secondaryColor, 0.4);
+          }
+          70% {
+            box-shadow: 0 0 0 2rem rgba($secondaryColor, 0);
+
+          }
+          100% {
+            box-shadow: 0 0 0 0 rgba($secondaryColor, 0);
+          }
+        }
+
+        .monitoringControlBtnStop {
+          border: none;
+          font-size: 1.3rem;
+          padding: 1rem 2rem;
+          background-color: $mainColor;
+          color: $lightNeutral;
+          border-radius: 1rem;
+
+          &:hover {
+            cursor: pointer;
+            color: $mainColor;
+            background-color: $lightNeutral;
+            box-shadow: $mainColor $boxShadow;
+            transition: all .3s ease;
+          }
+
+          i {
+            padding-left: 1rem;
+          }
+
+        }
+
+
+      }
+
+
+    }
+
+    .statistics {
+      flex: 100%;
+      height: 50vh;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      align-items: center;
+
+      .statisticsTables {
+        overflow-x: hidden;
+        overflow-y: scroll;
+        height: 100%;
+        border-radius: 1rem;
+        padding: 1rem;
+        flex: 0 1 40%;
+        background-color: $mainColor;
+
+
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          color: $lightNeutral;
+          text-align: center;
+
+          tr {
+            font-size: 1.5rem;
+
+            &.normal {
+
+              color: $lightNeutral;
+            }
+
+            &.danger {
+              color: #9C1A1C;
+            }
+
+            &.perfect {
+              color: green;
+            }
+          }
+
+          td {
+            label {
+              font-size: 1.2rem;
+            }
+
+            padding: .2rem;
+
+            .slider {
+              direction: ltr;
+              //-webkit-appearance: none;
+              appearance: none;
+              width: 100%;
+              background-color: $mainColor;
+              box-shadow: black $boxShadow;
+              border-radius: 1rem;
+              height: .3rem;
+              outline: none;
+              opacity: 0.7;
+              transition: opacity 2s;
+            }
+          }
+        }
+
+      }
+
+      .statisticsScoreOrCharts {
+        flex: 0 1 55%;
+        background-color: $mainColor;
+        height: 100%;
+        border-radius: 1rem;
+        color: $lightNeutral;
+
+
+        .statisticTabs {
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: space-around;
+          align-items: start;
+          width: 100%;
+
+          .statisticTab {
+            font-size: 1.4rem;
+            padding: 1rem;
+            cursor: pointer;
+
+            opacity: .5;
+
+            &.active {
+              opacity: 1;
+              font-weight: bold;
+            }
+
+          }
+
+
+        }
+
+        .score {
+          display: flex;
+          height: 70%;
+          flex-flow: row wrap;
+          justify-content: space-around;
+          align-items: center;
+
+          .scoreNo {
+            flex: 100%;
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-align: center;
+          }
+
+        }
+      }
+    }
+
+  }
+}
+
+@media screen and (max-width: 1200px) {
+
+
+}
+
+
+
+
+

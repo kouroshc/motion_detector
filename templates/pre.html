@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='style/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='style/fontawesome-free-6.4.0-web/css/all.min.css')}}">
+    <script src="{{url_for('static', filename='scripts/jquery.min.js')}}"></script>
+    <script src="{{url_for('static', filename='scripts/apexcharts.js')}}"></script>
+  </script>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+<div id="notifi" class="notifi">
+    <p>
+        {% include 'inc/messages.html' %}</p>
+</div>
+<div class="app-container">
+    <div class="left-area">
+
+        <button class="btn-close-left">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                 stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-x-circle"
+                 viewBox="0 0 24 24">
+                <defs/>
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M15 9l-6 6M9 9l6 6"/>
+            </svg>
+        </button>
+        <div class="app-name">
+            <a href="{{ url_for('index') }}">مانیتورینگ</a>
+        </div>
+        <div class="app-menu">
+
+            <a href="" class="item-link">
+
+
+            </a>
+            <a href="{{ url_for('index') }}" class="item-link">
+
+                <p><span class="fa-solid fa-angle-left"></span>مانیتورینگ </p>
+            </a>
+
+        </div>
+        <div class="app-signout">
+            <button class="btn-logout">
+                <a href="{{ url_for('index') }}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                         stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-log-out"
+                         viewBox="0 0 24 24">
+                        <defs/>
+                        <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/>
+                    </svg>
+                </a>
+            </button>
+        </div>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+</div>
+<script src="{{url_for('static', filename='scripts/lottie.min.js')}}"></script>
+
+<script src="{{url_for('static', filename='scripts/script.js')}}"></script>
+<script src="{{url_for('static', filename='scripts/charts.js')}}"></script>
+</body>
+
+</html>

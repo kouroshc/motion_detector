@@ -1,0 +1,86 @@
+{% extends "pre.html" %}
+{% block title %} چم گارد | داشبورد مدیریتی  {% endblock  %}
+{% block content %}
+<div class="main-area">
+    <div class="Header">
+        <div class="welcome">
+            <p class="welcomeText"> عزیز خوش آمدید
+            </p>
+        </div>
+        <div class="hamMenu">
+            <button class="fa-solid fa-bars btn-show-left-area">
+            </button>
+        </div>
+    </div>
+
+    <div class="monitoring">
+
+        <div class="monitoringInput">
+            <div class="monitoringRaw">
+                <video id="video" autoplay></video>
+            </div>
+            <svg class="monitoringResult" id="result-container">
+            </svg>
+
+        </div>
+        <div class="monitoringControl">
+            <label>مقطع زمانی (ثانیه):</label>
+            <p id="timeFrameValue">0.5</p>
+            <input id="timeFrame" class="timeFrame" type="range" min="0.500" max="10" value="0.5" step="0.5">
+            <button id="record-button">
+                <i class="fas fa-record-vinyl"></i>
+            </button>
+            <div id="timer"></div>
+            <button class="monitoringControlBtnStop">
+
+                <i class="fas fa-save"></i>ذخیره
+            </button>
+
+        </div>
+
+
+    </div>
+    <div class="statistics">
+        <div class="statisticsTables">
+            <table>
+                <thead>
+                <tr>
+                    <th>
+                        عضو
+                    </th>
+                    <th>
+                        وضعیت
+                    </th>
+                </tr>
+                </thead>
+                <tbody class="statisticsTableTbody">
+                <!--                <tr>-->
+                <!--                    <td>زانو چپ</td>-->
+                <!--                    <td>-->
+                <!--                        <label class="sliderLabel"></label>-->
+                <!--                        <input type="range" min="-180" max="180"-->
+                <!--                               value="50" class="slider" id="myRange" >-->
+                <!--                    </td>-->
+                <!--                </tr>-->
+                </tbody>
+            </table>
+        </div>
+        <div class="statisticsScoreOrCharts">
+            <div class="statisticTabs">
+                <div class="statisticTab" id="tabsChart">نمودار ها</div>
+                <div class="statisticTab" id="tabsStandars">استاندارد ها</div>
+            </div>
+            <div class="score">
+
+            </div>
+            <div class="charts">
+                <div id="chart"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

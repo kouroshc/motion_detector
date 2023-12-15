@@ -1,0 +1,45 @@
+{
+  "table": [
+    {
+      "body": "زانو",
+      "degree": 125,
+      "category" : "normal"
+    },
+    {
+      "body": "کتف",
+      "degree": 25,
+      "category" : "normal"
+    },
+    {
+      "body": "شانه",
+      "degree": 0,
+      "category" : "perfect"
+    },
+    {
+      "body": "لگن",
+      "degree": 153,
+      "category" : "normal"
+    },
+    {
+      "body": "گردن",
+      "degree": -55,
+      "category" : "danger"
+    },
+    {
+      "body": "مچ",
+      "degree": 77,
+      "category" : "normal"
+    }
+  ],
+  "standards": [
+    {"standarsNo": "آاستاندارد شماره 1",
+      "standarsScore": 20
+
+    },
+
+    {"standarsNo": "آاستاندارد شماره 2",
+      "standarsScore": 10
+
+    }
+  ]
+}

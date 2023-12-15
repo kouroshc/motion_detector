@@ -1,0 +1,467 @@
+@font-face {
+  font-family: "Artinsharp";
+  font-style: Thin;
+  font-weight: 100;
+  src: url("../fonts/artin/woff2/ArtinSharp-Thin.woff2") format("woff2"), url("../fonts/artin/woff/ArtinSharp-Thin.woff") format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: "Artinsharp";
+  font-style: Light;
+  font-weight: 300;
+  src: url("../fonts/artin/woff2/ArtinSharp-Light.woff2") format("woff2"), url("../fonts/artin/woff/ArtinSharp-Light.woff") format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: "Artinsharp";
+  font-style: Regular;
+  font-weight: 500;
+  src: url("../fonts/artin/woff2/ArtinSharp-Regular.woff2") format("woff2"), url("../fonts/artin/woff/ArtinSharp-Regular.woff") format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: "Artinsharp";
+  font-style: Bold;
+  font-weight: 800;
+  src: url("../fonts/artin/woff2/ArtinSharp-Bold.woff2") format("woff2"), url("../fonts/artin/woff/ArtinSharp-Bold.woff") format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: "Artinsharp";
+  font-style: Black;
+  font-weight: 900;
+  src: url("../fonts/artin/woff2/ArtinSharp-Black.woff2") format("woff2"), url("../fonts/artin/woff/ArtinSharp-Black.woff") format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+/* SCSS HEX */
+/* SCSS RGB */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Artinsharp";
+}
+
+body {
+  font-family: "Artinsharp";
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #343434;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* width*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  margin: 1rem;
+  background-color: #f7fff7;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #343434;
+  border-radius: 10px;
+}
+
+.notifi {
+  width: 50%;
+  z-index: 99;
+  font-family: "Artinsharp";
+  font-weight: 300;
+  position: absolute;
+  text-align: center;
+  left: auto;
+  top: 1rem;
+  background: #f7fff7;
+  color: #343434;
+  display: block;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: grey 3px 2px 5px 0.05px;
+  transform: translateY(-150px);
+  opacity: 0;
+}
+.notifi.showNotifi {
+  transform: translateY(20px);
+  opacity: 1;
+}
+.notifi.hideNotifi {
+  transform: translateY(-150px);
+  opacity: 0;
+}
+
+@media screen and (min-width: 1200px) {
+  .app-container {
+    background: #f7fff7;
+    width: 95vw;
+    height: 95vh;
+    border-radius: 1rem;
+    box-shadow: #ffe66d 3px 2px 5px 0.05px;
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .app-container .left-area {
+    border-radius: 0 1rem 1rem 0;
+    flex: 0 1 16rem;
+    width: 100%;
+    height: 100%;
+    background: #343434;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+  }
+  .app-container .left-area a {
+    text-decoration: none;
+    color: #f7fff7;
+  }
+  .app-container .left-area .btn-close-left {
+    display: none;
+  }
+  .app-container .left-area div {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+  }
+  .app-container .left-area .app-name {
+    justify-content: center;
+    font-weight: 700;
+    font-size: 2rem;
+    flex: 0 1 10%;
+  }
+  .app-container .left-area .app-menu {
+    padding: 2rem 0;
+    align-items: start;
+    justify-content: start;
+    flex: 1 1 50%;
+  }
+  .app-container .left-area .app-menu a {
+    text-align: start;
+    padding-top: 1rem;
+  }
+  .app-container .left-area .app-menu a:hover {
+    font-weight: 700;
+    transition: font-weight 0.2s ease;
+  }
+  .app-container .left-area .app-menu span {
+    padding: 1rem;
+  }
+  .app-container .left-area .app-signout {
+    flex: 0 1 10%;
+    justify-content: end;
+  }
+  .app-container .left-area .app-signout button {
+    border: none;
+    text-decoration: none;
+    background: #343434;
+  }
+  .main-area {
+    padding: 2rem;
+    flex: 1 1 50%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: start;
+    overflow: auto;
+  }
+  .main-area .Header {
+    flex: 0 1 100%;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-flow: row wrap;
+  }
+  .main-area .Header .welcome {
+    height: 1.9rem;
+    display: flex;
+    flex: 0 1 50%;
+    border-bottom: 3px solid #343434;
+  }
+  .main-area .Header .welcome span {
+    font-weight: 500;
+  }
+  .main-area .hamMenu button {
+    display: none;
+  }
+  .main-area .quickAccess {
+    flex: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .main-area .quickAccess .quickAccessSingle {
+    border-radius: 1rem;
+    flex: 0 1 40%;
+    height: 40%;
+    margin: 1rem;
+    padding: 0;
+    background: #343434;
+  }
+  .main-area .quickAccess .quickAccessSingle a {
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: start;
+    align-items: center;
+    color: #f7fff7;
+    text-decoration: none;
+  }
+  .main-area .quickAccess .quickAccessSingle a img {
+    mix-blend-mode: luminosity;
+    border-radius: 1rem 1rem 0 0;
+    height: 25rem;
+    object-fit: contain;
+    min-width: 100%;
+    object-fit: cover;
+  }
+  .main-area .quickAccess .quickAccessSingle a p {
+    z-index: 3;
+    padding: 1rem;
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-align: end;
+  }
+  .main-area .quickAccess .quickAccessSingle a p:hover {
+    font-weight: 700;
+    transition: font-weight 0.2s ease;
+  }
+  .main-area .monitoring {
+    margin: 1rem 0;
+    flex: 1 0 100%;
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    height: 50vh;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .main-area .monitoring .monitoringInput {
+    flex: 0 1 80%;
+    display: flex;
+    flex-flow: row-reverse wrap;
+    justify-content: space-around;
+    background-color: #343434;
+    border-radius: 1rem;
+    padding: 1rem 1rem 1rem 0;
+  }
+  .main-area .monitoring .monitoringInput .monitoringRaw {
+    flex: 1 1 45%;
+    padding: 0 1rem;
+  }
+  .main-area .monitoring .monitoringInput .monitoringRaw video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.6rem;
+  }
+  .main-area .monitoring .monitoringInput .monitoringResult {
+    background-color: #f7fff7;
+    padding: 0 1rem;
+    flex: 1 1 45%;
+    border-radius: 0.6rem;
+  }
+  .main-area .monitoring .monitoringControl {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .main-area .monitoring .monitoringControl label {
+    font-size: 1.3rem;
+  }
+  .main-area .monitoring .monitoringControl .timeFrame {
+    direction: ltr;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    background-color: #343434;
+    border-radius: 1rem;
+    height: 0.5rem;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 2s;
+  }
+  .main-area .monitoring .monitoringControl .timeFrame::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0.43rem;
+    height: 1.3rem;
+    border-radius: 0.5rem;
+    background: #2f3061;
+    cursor: pointer;
+  }
+  .main-area .monitoring .monitoringControl .timeFrame::-moz-range-thumb {
+    width: 0.43rem;
+    height: 1.3rem;
+    border-radius: 0.5rem;
+    background: #2f3061;
+    cursor: pointer;
+  }
+  .main-area .monitoring .monitoringControl #record-button {
+    background-color: #343434;
+    border-radius: 50%;
+    border: none;
+    color: #f7fff7;
+    cursor: pointer;
+    height: 100px;
+    margin: 1rem auto;
+    position: relative;
+    box-shadow: #343434 3px 2px 5px 0.05px;
+    width: 100px;
+    transition: color 1s ease;
+  }
+  .main-area .monitoring .monitoringControl #record-button:hover {
+    cursor: pointer;
+    color: #343434;
+    background-color: #f7fff7;
+    box-shadow: #343434 3px 2px 5px 0.05px;
+    transition: all 0.3s ease;
+  }
+  .main-area .monitoring .monitoringControl #record-button i {
+    font-size: 50px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .main-area .monitoring .monitoringControl #record-button.recording {
+    background-color: #343434;
+    color: #ffe66d;
+    box-shadow: #ffe66d 3px 2px 5px 0.05px;
+    transition: color, box-shadow 1s ease;
+  }
+  .main-area .monitoring .monitoringControl #record-button.recording i {
+    animation: pulse 1s infinite;
+    border-radius: 50%;
+  }
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255, 230, 109, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 2rem rgba(255, 230, 109, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 230, 109, 0);
+    }
+  }
+  .main-area .monitoring .monitoringControl .monitoringControlBtnStop {
+    border: none;
+    font-size: 1.3rem;
+    padding: 1rem 2rem;
+    background-color: #343434;
+    color: #f7fff7;
+    border-radius: 1rem;
+  }
+  .main-area .monitoring .monitoringControl .monitoringControlBtnStop:hover {
+    cursor: pointer;
+    color: #343434;
+    background-color: #f7fff7;
+    box-shadow: #343434 3px 2px 5px 0.05px;
+    transition: all 0.3s ease;
+  }
+  .main-area .monitoring .monitoringControl .monitoringControlBtnStop i {
+    padding-left: 1rem;
+  }
+  .main-area .statistics {
+    flex: 100%;
+    height: 50vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .main-area .statistics .statisticsTables {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100%;
+    border-radius: 1rem;
+    padding: 1rem;
+    flex: 0 1 40%;
+    background-color: #343434;
+  }
+  .main-area .statistics .statisticsTables table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #f7fff7;
+    text-align: center;
+  }
+  .main-area .statistics .statisticsTables table tr {
+    font-size: 1.5rem;
+  }
+  .main-area .statistics .statisticsTables table tr.normal {
+    color: #f7fff7;
+  }
+  .main-area .statistics .statisticsTables table tr.danger {
+    color: #9C1A1C;
+  }
+  .main-area .statistics .statisticsTables table tr.perfect {
+    color: green;
+  }
+  .main-area .statistics .statisticsTables table td {
+    padding: 0.2rem;
+  }
+  .main-area .statistics .statisticsTables table td label {
+    font-size: 1.2rem;
+  }
+  .main-area .statistics .statisticsTables table td .slider {
+    direction: ltr;
+    appearance: none;
+    width: 100%;
+    background-color: #343434;
+    box-shadow: black 3px 2px 5px 0.05px;
+    border-radius: 1rem;
+    height: 0.3rem;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 2s;
+  }
+  .main-area .statistics .statisticsScoreOrCharts {
+    flex: 0 1 55%;
+    background-color: #343434;
+    height: 100%;
+    border-radius: 1rem;
+    color: #f7fff7;
+  }
+  .main-area .statistics .statisticsScoreOrCharts .statisticTabs {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: start;
+    width: 100%;
+  }
+  .main-area .statistics .statisticsScoreOrCharts .statisticTabs .statisticTab {
+    font-size: 1.4rem;
+    padding: 1rem;
+    cursor: pointer;
+    opacity: 0.5;
+  }
+  .main-area .statistics .statisticsScoreOrCharts .statisticTabs .statisticTab.active {
+    opacity: 1;
+    font-weight: bold;
+  }
+  .main-area .statistics .statisticsScoreOrCharts .score {
+    display: flex;
+    height: 70%;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .main-area .statistics .statisticsScoreOrCharts .score .scoreNo {
+    flex: 100%;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,31 @@
+{% if login_form.username and login_form.username.errors %}
+    {% for error in login_form.username.errors %}
+        <p class="{{ cat }}">{{ error }}</p>
+    {% endfor %}
+{% endif %}
+
+
+{% if login_form.password and login_form.password.errors %}
+    {% for error in login_form.password.errors %}
+        <p class="{{ cat }}">{{ error }}</p>
+    {% endfor %}
+{% endif %}
+
+{% if register_form.username and register_form.username.errors %}
+    {% for error in register_form.username.errors %}
+        <p class="{{ cat }}">{{ error }}</p>
+    {% endfor %}
+{% endif %}
+
+
+{% if register_form.password and register_form.password.errors %}
+    {% for error in register_form.password.errors %}
+        <p class="{{ cat }}">{{ error }}</p>
+    {% endfor %}
+{% endif %}
+
+{% if register_form.confirm_password and register_form.confirm_password.errors %}
+    {% for error in register_form.confirm_password.errors %}
+        <p class="{{ cat }}">{{ error }}</p>
+    {% endfor %}
+{% endif %}
