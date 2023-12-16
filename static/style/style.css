@@ -51,7 +51,7 @@ body {
   justify-content: center;
 }
 
-/* width*/
+/* width */
 ::-webkit-scrollbar {
   width: 10px;
 }
