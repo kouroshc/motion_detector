@@ -28,21 +28,6 @@ $(document).ready(function () {
             $("#timeFrameValue").html(`${$("#timeFrame").val()}`)
         })
 
-        //VIdeo
-        // const video = document.getElementById('video');
-        // navigator.mediaDevices.enumerateDevices()
-        //     .then(devices => {
-        //         const videoDevices = devices.filter(device => device.kind === 'videoinput');
-        //         const videoDeviceIds = videoDevices.map(device => device.deviceId);
-        //         const videoConstraints = {video: {deviceId: videoDeviceIds[0]}};
-        //         return navigator.mediaDevices.getUserMedia(videoConstraints);
-        //     })
-        //     .then(stream => {
-        //         video.srcObject = stream;
-        //     })
-        //     .catch(error => {
-        //         console.error(error);
-        //     });
 
         function getUserMedia(options, successCallback, failureCallback) {
             var api = navigator.getUserMedia || navigator.webkitGetUserMedia ||
@@ -212,25 +197,6 @@ $(document).ready(function () {
                 }
             });
         }, timeFrame);
-//Record BTN
-//         var isRecording = false;
-//         var timerInterval;
-//
-//         $('#record-button').click(function () {
-//             if (isRecording) {
-//                 clearInterval(timerInterval);
-//                 $('#record-button').removeClass('recording');
-//                 $('#timer').text('');
-//             } else {
-//                 timerInterval = setInterval(function () {
-//                     var minutes = Math.floor(elapsedTime / 60000);
-//                     var seconds = ((elapsedTime % 60000) / 1000).toFixed(0);
-//                     $('#timer').text(minutes + ':' + (seconds < 10 ? '0' : '') + seconds);
-//                 }, 1000);
-//                 $('#record-button').addClass('recording');
-//             }
-//             isRecording = !isRecording;
-//         });
 
 
 //    Table
@@ -238,7 +204,7 @@ $(document).ready(function () {
 //    Slider
 
         setInterval(function () {
-            $.getJSON("static/scripts/test.json", function (data) {
+            $.getJSON("static/scripts/data.json", function (data) {
                 $(".statisticsTableTbody").empty();
                 for (let item of data.table) {
                     $(".statisticsTableTbody").append(`
@@ -280,7 +246,7 @@ $(document).ready(function () {
 
 //    Standards
         setInterval(function () {
-            $.getJSON("static/scripts/test.json", function (data) {
+            $.getJSON("static/scripts/data.json", function (data) {
                 $(".score").empty();
                 for (let item of data.standards) {
 
