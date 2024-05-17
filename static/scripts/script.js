@@ -1,4 +1,6 @@
 $(document).ready(function () {
+
+                    $('#result_annotated').hide()
 //    Menu
         $("a#pageLink").click(function () {
             $("a#pageLink").removeClass("active");
@@ -24,6 +26,7 @@ $(document).ready(function () {
         });
 //     TimeFrame
         var timeFrame = $("#timeFrame").val()
+    console.log(timeFrame)
         $("#timeFrame").change(function () {
             $("#timeFrameValue").html(`${$("#timeFrame").val()}`)
         })
@@ -187,16 +190,15 @@ $(document).ready(function () {
         });
 
 
-        //Result
-        setInterval(() => {
-            $.ajax({
-                url: 'static/scripts/result.json',
-                dataType: 'json',
-                success: (animationData) => {
-                    $("#result-container").html(animationData.svg);
-                }
-            });
-        }, timeFrame);
+        // setInterval(() => {
+        //     $.ajax({
+        //         url: 'static/scripts/result.json',
+        //         dataType: 'json',
+        //         success: (animationData) => {
+        //             $("#result-container").html(animationData.svg);
+        //         }
+        //     });
+        // }, timeFrame);
 
 
 //    Table
@@ -205,15 +207,23 @@ $(document).ready(function () {
 
         setInterval(function () {
             $.getJSON("static/scripts/data.json", function (data) {
+
+             console.log(data.Body_Angles)});
+             $(".statisticsTableTbody").empty();
+        }, timeFrame);
+
+
+        setInterval(function () {
+            $.getJSON("static/scripts/data.json", function (data) {
                 $(".statisticsTableTbody").empty();
-                for (let item of data.table) {
+                for (let item of data.Body_Angles) {
                     $(".statisticsTableTbody").append(`
             <tr class="${item.category}">
-                    <td>${item.body}</td>
+                    <td>${item.part}</td>
                     <td>
-                        <label class="sliderLabel">${item.degree}°</label>
-                        <input type="range" min="-180" max="180"
-                               value="${item.degree}" class="slider" smooth=yes disabled >
+                        <label class="sliderLabel">${item.angle}°</label>
+                        <input type="range" min="0" max="360" step="0.1"
+                               value="${item.angle}" class="slider" smooth=yes disabled >
                     </td>
                 </tr>
             `)
@@ -243,22 +253,45 @@ $(document).ready(function () {
             $("#tabsChart").removeClass("active");
 
         });
+            let i = 0;
+
+        $('#nodesDisplay').click(function (){
+            i++;
+            console.log(i)
+            if (i % 2 == 0){
+                    $('#camera_video').hide()
+                    $('#result_annotated').show()}
+            if (i % 2 == 1){
+                    $('#camera_video').show()
+                    $('#result_annotated').hide()}
+        })
 
 //    Standards
-        setInterval(function () {
-            $.getJSON("static/scripts/data.json", function (data) {
-                $(".score").empty();
-                for (let item of data.standards) {
-
-                    $(".score").append(`
-            <div class="scoreNo ">${item.standarsNo}</div>
-                    <div class="scoreResult ">${item.standarsScore}</div>
-            `)
-                }
-            });
-        }, 1000);
+//         setInterval(function () {
+//             $.getJSON("static/scripts/data.json", function (data) {
+//                 $(".score").empty();
+//                 for (let item of data.standards) {
+//
+//                     $(".score").append(`
+//             <div class="scoreNo ">${item.standarsNo}</div>
+//                     <div class="scoreResult ">${item.standarsScore}</div>
+//             `)
+//                 }
+//             });
+//         }, 1000);
+//         setInterval(function () {
+//             $.getJSON("static/scripts/data.json", function (data) {
+//                 $(".score").empty();
+//                 for (let item of data.standards) {
+//
+//                     $(".score").append(`
+//             <div class="scoreNo ">${item.standarsNo}</div>
+//                     <div class="scoreResult ">${item.standarsScore}</div>
+//             `)
+//                 }
+//             });
+//         }, 1000);
 
 
     }
-)
-;
+);

@@ -40,8 +40,8 @@ $(document).ready(function () {
         },
 
         yaxis: [{
-            seriesName: 'Temperature', title: {
-                text: "Temperature"
+            seriesName: 'Angle', title: {
+                text: "Angle"
             }, tickAmount: 4,
             floating: true,
 

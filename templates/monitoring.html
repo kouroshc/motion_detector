@@ -17,17 +17,24 @@
 
         <div class="monitoringInput">
             <div class="monitoringRaw">
-                <div id="my_camera"></div>
-                <video id="video" autoplay></video>
-            </div>
-            <svg class="monitoringResult" id="result-container">
-            </svg>
+                <img id="camera_video" src="{{ url_for('video_feed') }}" alt="Video Stream">
+                <img id="result_annotated" src="{{ url_for('res_feed_annotated') }}" alt="Video Stream">
 
+                <!--                <video id="video" autoplay></video>-->
+            </div>
+            <!--            <svg class="monitoringResult" id="result-container">-->
+            <!---->
+            <div class="monitoringRaw">
+                             <img id="result_empty" src="{{ url_for('res_feed_empty') }}" alt="Video Stream">
+                <!--            </svg>-->
+            </div>
         </div>
         <div class="monitoringControl">
+                                <button  id="nodesDisplay"> نمایش نقاط</button>
+
             <label>مقطع زمانی (ثانیه):</label>
-            <p id="timeFrameValue">0.5</p>
-            <input id="timeFrame" class="timeFrame" type="range" min="0.500" max="10" value="0.5" step="0.5">
+            <p id="timeFrameValue">1</p>
+            <input id="timeFrame" class="timeFrame" type="range" min="0.500" max="10000" value="1000" step="1000">
             <button id="record-button">
                 <i class="fas fa-record-vinyl"></i>
             </button>
@@ -37,22 +44,30 @@
                 <i class="fas fa-save"></i>ذخیره
             </button>
 
+
         </div>
 
 
     </div>
     <div class="statistics">
         <div class="statisticsTables">
+
             <table>
                 <thead>
-                <tr>
-                    <th>
-                        عضو
-                    </th>
-                    <th>
-                        وضعیت
-                    </th>
-                </tr>
+
+                <th>
+                    عضو
+                </th>
+                <th>
+                    وضعیت
+                </th>
+                                <img src="{{ url_for('res_data') }}" alt="Video Stream">
+
+<!--                <result_data src="{{ url_for('res_data') }}" alt="Video Stream">-->
+<!--                </result_data>-->
+
+
+                    </tr>
                 </thead>
                 <tbody class="statisticsTableTbody">
                 <!--                <tr>-->
