@@ -1,26 +1,7 @@
 {% extends "pre.html" %}
-{% block title %} مانیتورینگ  {% endblock  %}
+{% block title %} Motion Detector  {% endblock  %}
 {% block content %}
 <div class="main-area">
-    <!--            <button class="btn-show-right-area">-->
-    <!--                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"-->
-    <!--                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"-->
-    <!--                    class="feather feather-chevron-left">-->
-    <!--                    <polyline points="15 18 9 12 15 6" />-->
-    <!--                </svg>-->
-    <!--            </button>-->
-    <!--            <button class="btn-show-left-area">-->
-
-    <!--                <span class="fa-solid fa-grip-lines"></span>-->
-    <!--            </button>-->
-    <!--            <div class="main-area-header">-->
-    <!--                <div class="search-wrapper" id="searchLine">-->
-    <!--                    <input class="search-input" type="text" placeholder="e.g. files.doc">-->
-    <!--                    <span class="fa-solid fa-search"></span>-->
-    <!--                </div>-->
-    <!--            </div>-->
-
-
 
     <div class="Header">
         <div class="welcome">
@@ -39,8 +20,24 @@
         <div class="quickAccessSingle">
             <a href="{{ url_for('monitoring') }}">
                 <img src="{{url_for('static', filename='img/ff5453ff1ae4d6cad7adf3ff031a9b634eb61d71dfe4ab7b.avif')}}" alt="">
-                <p>مانیتورینگ</p>
+                <p>مانیتورینگ همزمان زوایای بدن</p>
             </a>
+        </div>
+
+        <div class="quickAccessSingle">
+                <img src="{{url_for('static', filename='img/ff5453ff1ae4d6cad7adf3ff031a9b634eb61d71dfe4ab7b.avif')}}" alt="">
+                       <form method="post" enctype="multipart/form-data">
+
+                       {{ time_frame_form.csrf_token}}
+                {{time_frame_form.time(id="timeFrame")}}
+                                            <a href="{{ url_for('monitoring') }}">
+
+                {{ time_frame_form.submit()}}
+            </a>
+
+                </form>
+                <p>مانیتورینگ</p>
+
         </div>
 
     </div>

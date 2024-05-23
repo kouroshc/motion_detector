@@ -5,6 +5,8 @@
     <div class="Header">
         <div class="welcome">
             <p class="welcomeText"> عزیز خوش آمدید
+                                <a href="{{ url_for('write_and_download') }}"> REcord</a>
+
             </p>
         </div>
         <div class="hamMenu">
@@ -25,24 +27,27 @@
             <!--            <svg class="monitoringResult" id="result-container">-->
             <!---->
             <div class="monitoringRaw">
-                             <img id="result_empty" src="{{ url_for('res_feed_empty') }}" alt="Video Stream">
+                <img id="result_empty" src="{{ url_for('res_feed_empty') }}" alt="Video Stream">
                 <!--            </svg>-->
             </div>
         </div>
         <div class="monitoringControl">
-                                <button  id="nodesDisplay"> نمایش نقاط</button>
+            <button id="nodesDisplay"> نمایش نقاط</button>
+<!--            <form method="post" enctype="multipart/form-data">-->
 
-            <label>مقطع زمانی (ثانیه):</label>
-            <p id="timeFrameValue">1</p>
-            <input id="timeFrame" class="timeFrame" type="range" min="0.500" max="10000" value="1000" step="1000">
-            <button id="record-button">
-                <i class="fas fa-record-vinyl"></i>
-            </button>
-            <div id="timer"></div>
-            <button id="stop-button" class="monitoringControlBtnStop">
+                <label>مقطع زمانی (ثانیه):</label>
+                <p id="timeFrameValue">{{time_frame}}</p>
+                <!--            <input id="timeFrame" class="timeFrame" type="range" min="0.500" max="10000" value="1000" step="1000">-->
+<!--            </form>-->
 
-                <i class="fas fa-save"></i>ذخیره
-            </button>
+<!--            <button id="record-button">-->
+<!--                <i class="fas fa-record-vinyl"></i>-->
+<!--            </button>-->
+<!--            <div id="timer"></div>-->
+<!--            <button id="stop-button" class="monitoringControlBtnStop">-->
+
+<!--                <i class="fas fa-save"></i>ذخیره-->
+<!--            </button>-->
 
 
         </div>
@@ -61,14 +66,15 @@
                 <th>
                     وضعیت
                 </th>
-                                <img src="{{ url_for('res_data') }}" alt="Video Stream">
-
-<!--                <result_data src="{{ url_for('res_data') }}" alt="Video Stream">-->
-<!--                </result_data>-->
 
 
-                    </tr>
+                <!--                <result_data src="{{ url_for('res_data') }}" alt="Video Stream">-->
+                <!--                </result_data>-->
+
+
+                </tr>
                 </thead>
+                  <img src="{{ url_for('res_data') }}">
                 <tbody class="statisticsTableTbody">
                 <!--                <tr>-->
                 <!--                    <td>زانو چپ</td>-->
@@ -87,11 +93,15 @@
                 <div class="statisticTab" id="tabsStandars">استاندارد ها</div>
             </div>
             <div class="score">
-
             </div>
             <div class="charts">
-                <div id="chart"></div>
+                                <img src="{{ url_for('res_chart_data') }}">
 
+<div class="graph">
+            <button id="showHumid"> Show Humidity</button>
+            <button id="showTemp"> Show Temperature</button>
+            <div id="chart"></div>
+        </div>
             </div>
 
         </div>

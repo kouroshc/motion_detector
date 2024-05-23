@@ -3,7 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="52f3c2a5-feb5-4ae6-bccc-10a3d733c3fd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motion_detector/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/motion_detector/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motion_detector/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/motion_detector/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scripts/chart.json" beforeDir="false" afterPath="$PROJECT_DIR$/static/scripts/chart.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scripts/charts.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/scripts/charts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/scripts/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/static/scripts/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scripts/result.json" beforeDir="false" afterPath="$PROJECT_DIR$/static/scripts/result.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/scripts/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/style/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/style/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/style/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/static/style/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/monitoring.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/monitoring.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,14 +66,14 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ASUS/Desktop/motion_detector/motion_detector&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.templateLanguages.PyTemplateLanguageModulesConfigurable&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ASUS/Desktop/motion_detector/static/scripts&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ASUS\Desktop\motion_detector\motion_detector" />
       <recent name="C:\Users\ASUS\Desktop\motion_detector\static\scripts" />
+      <recent name="C:\Users\ASUS\Desktop\motion_detector\motion_detector" />
       <recent name="C:\Users\ASUS\Desktop\motion_detector\templates" />
       <recent name="C:\Users\ASUS\Desktop\motion_detector\static\style" />
     </key>
@@ -93,7 +104,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="detect" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="face" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="motion_detector" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -106,7 +117,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/motion_detector/detect.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/motion_detector/face.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -115,7 +126,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="detector" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="peaton" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="motion_detector" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -123,12 +134,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/motion_detector" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/New folder/Pedestrian_Detection_2-master" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/motion_detector/detector.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/New folder/Pedestrian_Detection_2-master/peaton.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -137,7 +148,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="routes" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="pedes" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="motion_detector" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -150,7 +161,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/motion_detector/routes.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/motion_detector/pedes.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -159,7 +170,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="pedestrian_detect" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="motion_detector" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -167,12 +178,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/motion_detector" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/New folder" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/motion_detector/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/New folder/pedestrian_detect.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -184,10 +195,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.app" />
-        <item itemvalue="Python.detect" />
-        <item itemvalue="Python.detector" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.routes" />
+        <item itemvalue="Python.peaton" />
+        <item itemvalue="Python.pedestrian_detect" />
+        <item itemvalue="Python.pedes" />
+        <item itemvalue="Python.face" />
       </list>
     </recent_temporary>
   </component>
@@ -209,7 +220,15 @@
       <workItem from="1715773039909" duration="4597000" />
       <workItem from="1715836877660" duration="26789000" />
       <workItem from="1715949285378" duration="12832000" />
-      <workItem from="1715962509303" duration="3200000" />
+      <workItem from="1715962509303" duration="3920000" />
+      <workItem from="1715970540993" duration="266000" />
+      <workItem from="1715979501754" duration="9063000" />
+      <workItem from="1716023366871" duration="14481000" />
+      <workItem from="1716061480032" duration="2685000" />
+      <workItem from="1716123965577" duration="7719000" />
+      <workItem from="1716324048845" duration="1787000" />
+      <workItem from="1716396053030" duration="7234000" />
+      <workItem from="1716438169611" duration="12273000" />
     </task>
     <servers />
   </component>
@@ -240,12 +259,16 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/motion_detector$peaton.coverage" NAME="peaton Coverage Results" MODIFIED="1716130512792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/New folder/Pedestrian_Detection_2-master" />
     <SUITE FILE_PATH="coverage/motion_detector$detector.coverage" NAME="detector Coverage Results" MODIFIED="1715852599370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motion_detector" />
     <SUITE FILE_PATH="coverage/motion_detector$routes.coverage" NAME="routes Coverage Results" MODIFIED="1715839570286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motion_detector" />
+    <SUITE FILE_PATH="coverage/motion_detector$face.coverage" NAME="face Coverage Results" MODIFIED="1716128427431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motion_detector" />
     <SUITE FILE_PATH="coverage/motion_detector$detect.coverage" NAME="detect Coverage Results" MODIFIED="1715864171324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motion_detector" />
     <SUITE FILE_PATH="coverage/motion_detector$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1702564114177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motion_detector" />
+    <SUITE FILE_PATH="coverage/motion_detector$pedestrian_detect.coverage" NAME="pedestrian_detect Coverage Results" MODIFIED="1716129916448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/New folder" />
     <SUITE FILE_PATH="coverage/motion_detector$1.coverage" NAME="1 Coverage Results" MODIFIED="1715773834994" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motion_detector" />
-    <SUITE FILE_PATH="coverage/motion_detector$app.coverage" NAME="app Coverage Results" MODIFIED="1715963655633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/motion_detector$test.coverage" NAME="test Coverage Results" MODIFIED="1715852370903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motion_detector" />
+    <SUITE FILE_PATH="coverage/motion_detector$app.coverage" NAME="app Coverage Results" MODIFIED="1716448760651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/motion_detector$test.coverage" NAME="test Coverage Results" MODIFIED="1716125453332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motion_detector" />
+    <SUITE FILE_PATH="coverage/motion_detector$pedes.coverage" NAME="pedes Coverage Results" MODIFIED="1716129713953" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/motion_detector" />
   </component>
 </project>

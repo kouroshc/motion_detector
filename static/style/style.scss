@@ -214,14 +214,13 @@ body {
         padding: 0;
         background: $mainColor;
 
-        a {
+
           height: 100%;
           display: flex;
           flex-flow: row wrap;
           justify-content: start;
           align-items: center;
           color: $lightNeutral;
-          text-decoration: none;
 
           img {
             mix-blend-mode: luminosity;
@@ -249,7 +248,13 @@ body {
             text-align: end;
 
           }
+        a{
+                    text-decoration: none;
+          color: $lightNeutral;
+          cursor: pointer;
+
         }
+
 
       }
     }

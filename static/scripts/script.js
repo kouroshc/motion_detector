@@ -25,11 +25,12 @@ $(document).ready(function () {
             $(".left-area").removeClass("show");
         });
 //     TimeFrame
-        var timeFrame = $("#timeFrame").val()
+        var timeFrame = $("#timeFrameValue").html()
+        timeFrame *= 1000
     console.log(timeFrame)
-        $("#timeFrame").change(function () {
-            $("#timeFrameValue").html(`${$("#timeFrame").val()}`)
-        })
+        // $("#timeFrame").change(function () {
+        //     $("#timeFrameValue").html(`${$("#timeFrame").val()}`)
+        // })
 
 
         function getUserMedia(options, successCallback, failureCallback) {
@@ -204,13 +205,6 @@ $(document).ready(function () {
 //    Table
 
 //    Slider
-
-        setInterval(function () {
-            $.getJSON("static/scripts/data.json", function (data) {
-
-             console.log(data.Body_Angles)});
-             $(".statisticsTableTbody").empty();
-        }, timeFrame);
 
 
         setInterval(function () {
