@@ -1,0 +1,49 @@
+{% extends "pre.html" %}
+{% block title %} مانیتورینگ  {% endblock  %}
+{% block content %}
+<div class="main-area">
+    <div class="Header">
+        <div class="welcome">
+            <p class="welcomeText">                مقطع زمانی (ثانیه):
+                <p id="timeFrameValue">{{time_frame}}</p>
+
+
+            </p>
+        </div>
+        <div class="hamMenu">
+            <button class="fa-solid fa-bars btn-show-left-area">
+            </button>
+        </div>
+    </div>
+       <form method="post" enctype="multipart/form-data">
+
+                            <input id="timeFrame" class="timeFrame" type="range" min="0.500" max="10000" value="1000" step="1000">
+            </form>
+
+      <a id="downloadBtn" href="{{ url_for('download_and_erase') }}">دریافت فایل آنالیز و شروع از اول</a>
+
+
+    <div class="monitoring">
+
+        <div class="monitoringInput">
+            <div class="monitoringRaw">
+                <img src="{{ url_for('res_feed_annotated') }}" alt="Video Stream">
+
+            </div>
+            <div class="monitoringRaw">
+                <img id="result_empty" src="{{ url_for('res_feed_empty') }}" alt="Video Stream">
+            </div>
+        </div>
+        <div class="monitoringControl">
+
+
+
+
+        </div>
+
+
+    </div>
+    <img src="{{ url_for('write_and_download') }}"> </img>
+</div>
+
+{% endblock %}
