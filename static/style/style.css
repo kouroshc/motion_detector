@@ -196,34 +196,34 @@ body {
     display: none;
   }
   .main-area .quickAccess {
+    height: 50%;
+    width: 100%;
     flex: 100%;
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
     text-align: center;
   }
   .main-area .quickAccess .quickAccessSingle {
     border-radius: 1rem;
     flex: 0 1 40%;
-    height: 40%;
+    height: 100%;
     margin: 1rem;
     padding: 0;
     background: #343434;
-    height: 100%;
     display: flex;
     flex-flow: row wrap;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     color: #f7fff7;
   }
   .main-area .quickAccess .quickAccessSingle img {
     mix-blend-mode: luminosity;
     border-radius: 1rem 1rem 0 0;
-    height: 25rem;
+    max-height: 100%;
+    width: 100%;
     object-fit: contain;
-    min-width: 100%;
-    object-fit: cover;
   }
   .main-area .quickAccess .quickAccessSingle p {
     z-index: 3;
@@ -231,16 +231,55 @@ body {
     width: 100%;
     font-size: 1.3rem;
     font-weight: 500;
-    text-align: end;
+    text-align: center;
   }
   .main-area .quickAccess .quickAccessSingle p:hover {
     font-weight: 700;
     transition: font-weight 0.2s ease;
   }
+  .main-area .quickAccess .quickAccessSingle select {
+    margin: 1rem;
+    padding: 0rem 2rem;
+    color: #f7fff7;
+    background-color: #343434;
+    text-align: start;
+    font-size: 1.1rem;
+    outline: 0;
+    border-radius: 0.7rem;
+    border: 0;
+  }
+  .main-area .quickAccess .quickAccessSingle input[type=submit] {
+    margin: 1rem;
+    font-size: 1.1rem;
+    padding: 0rem 2rem;
+    color: #f7fff7;
+    background-color: #343434;
+    text-align: center;
+    outline: 0;
+    border: 0;
+    border-radius: 0.7rem;
+  }
   .main-area .quickAccess .quickAccessSingle a {
     text-decoration: none;
     color: #f7fff7;
     cursor: pointer;
+  }
+  .main-area #nodesDisplay {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    font-size: 1.3rem;
+    background-color: #343434;
+    color: #f7fff7;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+  }
+  .main-area #nodesDisplay:hover {
+    cursor: pointer;
+    color: #343434;
+    background-color: #f7fff7;
+    box-shadow: #343434 3px 2px 5px 0.05px;
+    transition: all 0.3s ease;
   }
   .main-area .monitoring {
     margin: 1rem 0;
@@ -252,7 +291,7 @@ body {
     justify-content: space-around;
   }
   .main-area .monitoring .monitoringInput {
-    flex: 0 1 80%;
+    flex: 0 1 100%;
     display: flex;
     flex-flow: row-reverse wrap;
     justify-content: space-around;

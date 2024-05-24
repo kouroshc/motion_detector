@@ -4,8 +4,9 @@
 <div class="main-area">
     <div class="Header">
         <div class="welcome">
-            <p class="welcomeText"> عزیز خوش آمدید
-                                <a href="{{ url_for('write_and_download') }}"> REcord</a>
+            <p class="welcomeText">                مقطع زمانی (ثانیه):
+                <p id="timeFrameValue">{{time_frame}}</p>
+
 
             </p>
         </div>
@@ -14,6 +15,8 @@
             </button>
         </div>
     </div>
+      <button id="nodesDisplay"> نمایش نقاط</button>
+
 
     <div class="monitoring">
 
@@ -32,11 +35,9 @@
             </div>
         </div>
         <div class="monitoringControl">
-            <button id="nodesDisplay"> نمایش نقاط</button>
-<!--            <form method="post" enctype="multipart/form-data">-->
 
-                <label>مقطع زمانی (ثانیه):</label>
-                <p id="timeFrameValue">{{time_frame}}</p>
+            <!--            <form method="post" enctype="multipart/form-data">-->
+
                 <!--            <input id="timeFrame" class="timeFrame" type="range" min="0.500" max="10000" value="1000" step="1000">-->
 <!--            </form>-->
 
@@ -87,24 +88,24 @@
                 </tbody>
             </table>
         </div>
-        <div class="statisticsScoreOrCharts">
-            <div class="statisticTabs">
-                <div class="statisticTab" id="tabsChart">نمودار ها</div>
-                <div class="statisticTab" id="tabsStandars">استاندارد ها</div>
-            </div>
-            <div class="score">
-            </div>
-            <div class="charts">
-                                <img src="{{ url_for('res_chart_data') }}">
+<!--        <div class="statisticsScoreOrCharts">-->
+<!--            <div class="statisticTabs">-->
+<!--                <div class="statisticTab" id="tabsChart">نمودار ها</div>-->
+<!--                <div class="statisticTab" id="tabsStandars">استاندارد ها</div>-->
+<!--            </div>-->
+<!--            <div class="score">-->
+<!--            </div>-->
+<!--            <div class="charts">-->
+<!--                                <img src="{{ url_for('res_chart_data') }}">-->
 
-<div class="graph">
-            <button id="showHumid"> Show Humidity</button>
-            <button id="showTemp"> Show Temperature</button>
-            <div id="chart"></div>
-        </div>
-            </div>
+<!--<div class="graph">-->
+<!--            <button id="showHumid"> Show Humidity</button>-->
+<!--            <button id="showTemp"> Show Temperature</button>-->
+<!--            <div id="chart"></div>-->
+<!--        </div>-->
+<!--            </div>-->
 
-        </div>
+<!--        </div>-->
 
     </div>
 </div>

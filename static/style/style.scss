@@ -11,7 +11,7 @@ $animation: 3s ease 0s 1 normal forwards;
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: $mainFont;
-   transitison: 500ms ease;
+  transitison: 500ms ease;
 }
 
 body {
@@ -75,7 +75,7 @@ body {
 }
 
 @media screen and (min-width: 1200px) {
-  .mobile-message{
+  .mobile-message {
     display: none;
   }
   .app-container {
@@ -199,63 +199,106 @@ body {
 
     //Landing
     .quickAccess {
+      height: 50%;
+      width: 100%;
       flex: 100%;
       display: flex;
       flex-flow: row wrap;
-      align-items: center;
+      align-items: stretch;
       justify-content: center;
       text-align: center;
 
       .quickAccessSingle {
         border-radius: 1rem;
         flex: 0 1 40%;
-        height: 40%;
+        height: 100%;
         margin: 1rem;
         padding: 0;
         background: $mainColor;
 
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        color: $lightNeutral;
 
-          height: 100%;
-          display: flex;
-          flex-flow: row wrap;
-          justify-content: start;
-          align-items: center;
+        img {
+          mix-blend-mode: luminosity;
+          border-radius: 1rem 1rem 0 0;
+          max-height: 100%;
+          width: 100%;
+          object-fit: contain;
+        }
+
+        p {
+
+          z-index: 3;
+
+          &:hover {
+            font-weight: 700;
+            transition: font-weight .2s ease;
+          }
+
+          padding: 1rem;
+          width: 100%;
+          font-size: 1.3rem;
+          font-weight: 500;
+          text-align: center;
+
+        }
+
+        select {
+          margin: 1rem;
+          padding: 0rem 2rem;
           color: $lightNeutral;
+          background-color: $mainColor;
+          text-align: start;
+          font-size: 1.1rem;
+          outline: 0;
+          border-radius: .7rem;
 
-          img {
-            mix-blend-mode: luminosity;
-            border-radius: 1rem 1rem  0 0   ;
-            height: 25rem;
-            object-fit: contain;
-            min-width: 100%;
-            object-fit: cover;
-            //margin-top: -30%;
-          }
+          border: 0;
+        }
 
-          p {
+        input[type=submit] {
+          margin: 1rem;
+          font-size: 1.1rem;
+          padding: 0rem 2rem;
+          color: $lightNeutral;
+          background-color: $mainColor;
+          text-align: center;
+          outline: 0;
+          border: 0;
+          border-radius: .7rem;
+        }
 
-            //margin-top: -10%;
-            z-index: 3;
-            &:hover {
-              font-weight: 700;
-              transition: font-weight .2s ease;
-            }
-
-            padding: 1rem;
-            width: 100%;
-            font-size: 1.3rem;
-            font-weight: 500;
-            text-align: end;
-
-          }
-        a{
-                    text-decoration: none;
+        a {
+          text-decoration: none;
           color: $lightNeutral;
           cursor: pointer;
 
         }
 
 
+      }
+    }
+
+    #nodesDisplay {
+      margin-top: 1rem;
+      padding: .5rem 1rem;
+      border: none;
+      font-size: 1.3rem;
+      background-color: $mainColor;
+      color: $lightNeutral;
+      border-radius: 1rem;
+      margin-bottom: 1rem;
+
+      &:hover {
+        cursor: pointer;
+        color: $mainColor;
+        background-color: $lightNeutral;
+        box-shadow: $mainColor $boxShadow;
+        transition: all .3s ease;
       }
     }
 
@@ -270,7 +313,7 @@ body {
       justify-content: space-around;
 
       .monitoringInput {
-        flex: 0 1 80%;
+        flex: 0 1 100%;
         display: flex;
         flex-flow: row-reverse wrap;
         justify-content: space-around;
@@ -282,7 +325,7 @@ body {
           flex: 0 1 40%;
           padding: 0 1rem;
 
-          video,img {
+          video, img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -296,16 +339,18 @@ body {
           padding: 0 1rem;
           flex: 0 1 30%;
           border-radius: .6rem;
+
           img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: .6rem;}
+            border-radius: .6rem;
+          }
         }
       }
 
       .monitoringControl {
-        #nodesDisplay{
+        #nodesDisplay {
           padding: .5rem 1rem;
           border: none;
           font-size: 1.3rem;
@@ -313,6 +358,7 @@ body {
           color: $lightNeutral;
           border-radius: 1rem;
           margin-bottom: 1rem;
+
           &:hover {
             cursor: pointer;
             color: $mainColor;
@@ -321,11 +367,13 @@ body {
             transition: all .3s ease;
           }
         }
+
         display: flex;
         flex-flow: column wrap;
         justify-content: space-around;
         align-items: center;
-        label{
+
+        label {
           font-size: 1.3rem;
         }
 
@@ -565,18 +613,19 @@ body {
 }
 
 @media screen and (max-width: 1200px) {
-body *:not(.mobile-message) {
-        display: none;
-    }
+  body *:not(.mobile-message) {
+    display: none;
+  }
 
-    /* این قسمت پیام مورد نظر را نمایش می‌دهد */
-    .mobile-message {
-        display: block;
-        text-align: center;
-        font-size: 2rem;
-      color: $lightNeutral;
-    }
+  /* این قسمت پیام مورد نظر را نمایش می‌دهد */
+  .mobile-message {
+    display: block;
+    text-align: center;
+    font-size: 2rem;
+    color: $lightNeutral;
+  }
 }
+
 //@media screen and (max-width: 1200px) {
 //  .app-container {
 //    overflow: scroll;

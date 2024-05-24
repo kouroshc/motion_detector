@@ -26,17 +26,19 @@
 
         <div class="quickAccessSingle">
                 <img src="{{url_for('static', filename='img/ff5453ff1ae4d6cad7adf3ff031a9b634eb61d71dfe4ab7b.avif')}}" alt="">
+                                                       <p>لطفا مقطع زمانی مورد نظر خود را وارد و سپس دکمه ورود را فشار دهید</p>
+
                        <form method="post" enctype="multipart/form-data">
+
 
                        {{ time_frame_form.csrf_token}}
                 {{time_frame_form.time(id="timeFrame")}}
-                                            <a href="{{ url_for('monitoring') }}">
+<!--                                            <a href="{{ url_for('monitoring') }}">-->
 
                 {{ time_frame_form.submit()}}
-            </a>
+<!--            </a>-->
 
                 </form>
-                <p>مانیتورینگ</p>
 
         </div>
 
