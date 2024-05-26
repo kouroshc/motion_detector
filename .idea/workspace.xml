@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52f3c2a5-feb5-4ae6-bccc-10a3d733c3fd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/motion_detector/detect.py" beforeDir="false" afterPath="$PROJECT_DIR$/motion_detector/detect.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/motion_detector/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/motion_detector/routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/scripts/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/static/scripts/data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/scripts/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/monitoring.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/monitoring.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pre.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pre.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +14,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -67,7 +63,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/ASUS/Desktop/motion_detector",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+    "settings.editor.selected.configurable": "vcs.Git"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -204,6 +200,9 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\ASUS\AppData\Roaming\Subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="52f3c2a5-feb5-4ae6-bccc-10a3d733c3fd" name="Changes" comment="" />
@@ -235,7 +234,7 @@
       <workItem from="1716483694129" duration="10656000" />
       <workItem from="1716527735466" duration="13925000" />
       <workItem from="1716545988162" duration="8332000" />
-      <workItem from="1716705256881" duration="6936000" />
+      <workItem from="1716705256881" duration="8099000" />
     </task>
     <servers />
   </component>
