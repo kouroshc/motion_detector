@@ -1,3 +1,4 @@
+import logging
 import os
 import time
 from datetime import datetime
@@ -63,6 +64,7 @@ class Detect:
     @classmethod
     def buffer_image_for_web(cls):
         while True:
+            start_time = time.time()
             frame = cls.capture_image()
             if frame is not None:
                 yield (b'--frame\r\n'
@@ -70,21 +72,26 @@ class Detect:
             else:
                 break
 
+            elapsed_time = time.time() - start_time
+            logging.debug(f"Frame generation time: {elapsed_time} seconds")
+
     @classmethod
     def buffer_res_annotated_for_web(cls):
         with cls.mp_pose.Pose(min_detection_confidence=.5, min_tracking_confidence=.5, smooth_landmarks=True) as pose:
             while True:
+                start_time = time.time()
                 frame = cls.capture_image()
                 # image_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
                 results = pose.process(frame)
                 annotated_image = frame.copy()
-
                 cls.mp_drawing.draw_landmarks(annotated_image, results.pose_landmarks, cls.mp_pose.POSE_CONNECTIONS)
                 if frame is not None:
                     yield (b'--frame\r\n'
                            b'Content-Type: image/jpeg\r\n\r\n' + cls.send_image(annotated_image) + b'\r\n')
                 else:
                     break
+                elapsed_time = time.time() - start_time
+                logging.debug(f"Frame generation time: {elapsed_time} seconds")
 
     @classmethod
     def write_and_download(cls,status):
@@ -117,6 +124,7 @@ class Detect:
     def buffer_res_empty_for_web(cls):
         with cls.mp_pose.Pose(min_detection_confidence=.5, min_tracking_confidence=.5, smooth_landmarks=True) as pose:
             while True:
+                start_time = time.time()
                 frame = cls.capture_image()
                 # image_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
                 results = pose.process(frame)
@@ -127,6 +135,9 @@ class Detect:
                            b'Content-Type: image/jpeg\r\n\r\n' + cls.send_image(annotated_image) + b'\r\n')
                 else:
                     break
+
+                elapsed_time = time.time() - start_time
+                logging.debug(f"Frame generation time: {elapsed_time} seconds")
 
     @classmethod
     def send_image(cls, image):

@@ -1,0 +1,33 @@
+{% extends "pre.html" %}
+{% block title %} مانیتورینگ  {% endblock  %}
+{% block content %}
+<div class="main-area">
+    <div class="Header">
+        <div class="welcome">
+            <p class="welcomeText">                مقطع زمانی (ثانیه):
+                <p id="timeFrameValue">{{time_frame}}</p>
+
+
+            </p>
+        </div>
+        <div class="hamMenu">
+            <button class="fa-solid fa-bars btn-show-left-area">
+            </button>
+        </div>
+    </div>
+
+ <select id="cameraSelect">
+        <!-- Populate this with available camera devices -->
+    </select>
+<!--    <button id="recordButton">Record</button>-->
+<!--    <button id="stopButton">Stop</button>-->
+<!--    <video id="videoContainer">-->
+<!--        &lt;!&ndash; Display video here &ndash;&gt;asdasd-->
+<!--    </video>-->
+
+     <video id="remoteVideo" autoplay></video>
+    <a href="{{ url_for('video_feed') }}" target="_self">Link to Video Feed</a>
+
+</div>
+
+{% endblock %}
